@@ -61,8 +61,8 @@ function ServicesPage() {
                      sourceParam === 'content' || sourceParam === 'security') {
             targetElement = document.getElementById('articlesSection');
           } else {
-            // Default to articles section if no specific source
-            targetElement = document.getElementById('articlesSection');
+            // Default to Client Resources section heading if no specific source
+            targetElement = document.getElementById('clientResourcesSection');
           }
           
           // Scroll to the target element if found
@@ -784,7 +784,7 @@ function ServicesPage() {
           {/* Resources Tab */}
           {activeTab === 'resources' && (
             <>
-              <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center font-['Orbitron'] text-[#000000]">Client Resources</h1>
+              <h1 id="clientResourcesSection" className="text-3xl sm:text-4xl font-bold mb-6 text-center font-['Orbitron'] text-[#000000]">Client Resources</h1>
               <p className="text-[#000000] text-center mb-12 max-w-3xl mx-auto font-medium">
                 We've created these resources to help you plan, prepare, and get the most out of your web development project.
               </p>
