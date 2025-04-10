@@ -6,9 +6,16 @@ function ServicesPage() {
   // Set initial active tab
   const [activeTab, setActiveTab] = useState('services');
   
-  // Check for hash in URL to set active tab
+  // Check for tab parameter in URL to set active tab
   useEffect(() => {
-    if (window.location.hash === '#resources') {
+    // Check for tab in search params
+    const urlParams = new URLSearchParams(window.location.search);
+    const tabParam = urlParams.get('tab');
+    if (tabParam) {
+      setActiveTab(tabParam);
+    }
+    // Also check for hash fragment for backward compatibility
+    else if (window.location.hash === '#resources') {
       setActiveTab('resources');
     }
   }, []);
