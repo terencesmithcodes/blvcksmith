@@ -1,6 +1,5 @@
-import ProfileImage from '../components/ProfileImage'
-
 import React, { useState, useEffect } from 'react';
+import ProfileImage from '../components/ProfileImage';
 
 function HomePage() {
   // State to track if user has scrolled
