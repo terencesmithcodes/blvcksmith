@@ -6,7 +6,7 @@ function Footer() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0 text-center md:text-left">
-            <h2 className="text-2xl font-bold mb-2 font-['Orbitron']">Lexicon</h2>
+            <h2 className="text-2xl font-bold mb-2 font-['Orbitron']">BlvckSmith</h2>
             <p className="text-[#E4E4E7]">Web Development & Consulting</p>
           </div>
           
@@ -26,7 +26,7 @@ function Footer() {
         </div>
         
         <div className="border-t-2 border-[#FACC15] mt-6 md:mt-8 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-[#E4E4E7] text-center md:text-left">&copy; {year} Lexicon. All rights reserved.</p>
+          <p className="text-[#E4E4E7] text-center md:text-left">&copy; {year} BlvckSmith. All rights reserved.</p>
           <div className="mt-4 md:mt-0 flex flex-wrap justify-center md:justify-start space-x-4">
             <a href="/#/privacy" className="text-[#E4E4E7] hover:text-[#FACC15] transition-colors font-medium">Privacy Policy</a>
             <a href="/#/terms" className="text-[#E4E4E7] hover:text-[#FACC15] transition-colors font-medium">Terms of Service</a>
