@@ -89,7 +89,7 @@
     </header>
     
     <div class="container">
-        <a href="/services#resources" class="back-link" onclick="window.close(); return false;">← Back to Resources</a>
+        <a href="javascript:void(0)" class="back-link" onclick="goBackToResources()">← Back to Resources</a>
         
         <section class="section">
             <h2>Introduction</h2>
@@ -208,5 +208,22 @@
             <p>Contact us: info@blvcksmith.com | (404) 860-5633</p>
         </footer>
     </div>
+    
+    <script>
+        function goBackToResources() {
+            // Try to navigate to parent window if in iframe
+            if (window.parent && window.parent !== window) {
+                window.parent.location.href = '/services';
+                return;
+            }
+            
+            // Otherwise try to use history or direct navigation
+            if (document.referrer.includes('/services')) {
+                window.history.back();
+            } else {
+                window.location.href = '/services';
+            }
+        }
+    </script>
 </body>
 </html>
