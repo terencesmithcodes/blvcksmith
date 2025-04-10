@@ -6,25 +6,41 @@ function ServicesPage() {
   // Set initial active tab
   const [activeTab, setActiveTab] = useState('services');
   
-  // Check for tab parameter in URL to set active tab and scroll to element
+  // Check for tab parameter in URL to set active tab and scroll to specific resource section
   useEffect(() => {
     // First run the default scroll to top
     window.scrollTo(0, 0);
     
-    // Check for tab in search params
+    // Check for tab and source in search params
     const urlParams = new URLSearchParams(window.location.search);
     const tabParam = urlParams.get('tab');
+    const sourceParam = urlParams.get('source');
     
     if (tabParam) {
       setActiveTab(tabParam);
       
       // Allow time for the DOM to update with the new tab content
       setTimeout(() => {
-        // If specifically the resources tab, scroll to the resources section
+        // If specifically the resources tab, check for specific section to scroll to
         if (tabParam === 'resources') {
-          const resourcesSection = document.getElementById('resourcesSection');
-          if (resourcesSection) {
-            resourcesSection.scrollIntoView({ behavior: 'smooth' });
+          let targetElement = null;
+          
+          // Determine which section to scroll to based on source parameter
+          if (sourceParam === 'planner') {
+            targetElement = document.getElementById('plannerSection');
+          } else if (sourceParam === 'budget') {
+            targetElement = document.getElementById('budgetGuideSection');
+          } else if (sourceParam === 'contracts' || sourceParam === 'hiring' || 
+                     sourceParam === 'content' || sourceParam === 'security') {
+            targetElement = document.getElementById('articlesSection');
+          } else {
+            // Default to articles section if no specific source
+            targetElement = document.getElementById('articlesSection');
+          }
+          
+          // Scroll to the target element if found
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
           }
         }
       }, 100);
@@ -714,7 +730,7 @@ function ServicesPage() {
               </p>
               
               <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-[#E4E4E7] border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div id="plannerSection" className="bg-[#E4E4E7] border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                   <div className="bg-[#FACC15] -mt-10 -ml-10 p-4 border-2 border-black inline-block">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -749,12 +765,12 @@ function ServicesPage() {
                     </div>
                   </div>
                   
-                  <a href="/resources/project-planner.html" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(250,204,21,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
+                  <a href="/resources/project-planner.html?source=planner" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(250,204,21,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
                     View Document
                   </a>
                 </div>
                 
-                <div className="bg-[#E4E4E7] border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div id="budgetGuideSection" className="bg-[#E4E4E7] border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                   <div className="bg-[#FACC15] -mt-10 -ml-10 p-4 border-2 border-black inline-block">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="12" y1="1" x2="12" y2="23"></line>
@@ -786,33 +802,33 @@ function ServicesPage() {
                     </div>
                   </div>
                   
-                  <a href="/resources/budget-guide.html" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(250,204,21,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
+                  <a href="/resources/budget-guide.html?source=budget" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(250,204,21,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
                     View Document
                   </a>
                 </div>
                 
-                <div id="resourcesSection" className="bg-[#E4E4E7] border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:col-span-2">
+                <div id="articlesSection" className="bg-[#E4E4E7] border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:col-span-2">
                   <h2 className="text-2xl font-bold mb-4 font-['Orbitron'] text-[#000000]">Helpful Articles</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <h3 className="font-semibold mb-2">Understanding Web Development Contracts</h3>
                       <p className="text-sm mb-3">Learn about the key elements of a web development contract and what to look for before signing.</p>
-                      <a href="/resources/web-development-contracts.html" className="text-[#000000] font-medium underline">Read Article →</a>
+                      <a href="/resources/web-development-contracts.html?source=contracts" className="text-[#000000] font-medium underline">Read Article →</a>
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">5 Questions to Ask Before Hiring a Developer</h3>
                       <p className="text-sm mb-3">Important questions that will help you identify the right development partner for your project.</p>
-                      <a href="/resources/hiring-developer-questions.html" className="text-[#000000] font-medium underline">Read Article →</a>
+                      <a href="/resources/hiring-developer-questions.html?source=hiring" className="text-[#000000] font-medium underline">Read Article →</a>
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Preparing Content for Your Website</h3>
                       <p className="text-sm mb-3">A guide to gathering and organizing content that will make your development process smoother.</p>
-                      <a href="/resources/preparing-website-content.html" className="text-[#000000] font-medium underline">Read Article →</a>
+                      <a href="/resources/preparing-website-content.html?source=content" className="text-[#000000] font-medium underline">Read Article →</a>
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Web Security Essentials for Business Owners</h3>
                       <p className="text-sm mb-3">What you need to know about keeping your website secure and your customer data protected.</p>
-                      <a href="/resources/web-security-essentials.html" className="text-[#000000] font-medium underline">Read Article →</a>
+                      <a href="/resources/web-security-essentials.html?source=security" className="text-[#000000] font-medium underline">Read Article →</a>
                     </div>
                   </div>
                 </div>
