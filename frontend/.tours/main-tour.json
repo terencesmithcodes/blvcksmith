@@ -1,0 +1,98 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "BlvckSmith Website Tour",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "# Welcome to the BlvckSmith Website\n\nThis tour will walk you through the key components and architecture of the BlvckSmith website, a professional web development company site built with React. The site features a neo-brutalist design with modern web techniques.\n\n## What You'll Learn\n- The overall structure of the codebase\n- Key React components and their roles\n- How the site's responsive design works\n- Special features like the interactive resource documents\n- How routing and navigation work\n\nLet's start by exploring the project structure."
+    },
+    {
+      "file": "package.json",
+      "line": 1,
+      "title": "Project Dependencies",
+      "description": "# Project Dependencies\n\nThis is the main package.json file which defines our project dependencies:\n\n- **React**: The main library used for building the UI\n- **React Router**: For handling navigation and routing\n- **React Scripts**: Configuration and scripts for the Create React App environment\n- **gh-pages**: Tool for deploying to GitHub Pages\n\nWe also use **Tailwind CSS** for styling, which provides utility classes for rapid UI development."
+    },
+    {
+      "file": "src/index.js",
+      "line": 1,
+      "title": "Application Entry Point",
+      "description": "# Application Entry Point\n\nThis is the entry point for our React application. Here we:\n\n1. Import the root styles\n2. Render the root App component inside a React Router provider\n3. Setup the routing for the application\n\nThe BrowserRouter component wraps our entire application, enabling client-side routing throughout the site."
+    },
+    {
+      "file": "src/App.js",
+      "line": 1,
+      "title": "Main App Component",
+      "description": "# Main App Component\n\nThis is the main App component that represents the homepage of the website. Key features include:\n\n1. A responsive design with different layouts for mobile and desktop\n2. A background video in the hero section\n3. Services section displaying the company's offerings\n4. Technologies section showcasing skills\n5. Contact form section\n\nThe design follows a neo-brutalist aesthetic with bold borders, high contrast, and geometric shapes."
+    },
+    {
+      "file": "src/components/BackgroundVideo.js",
+      "line": 1,
+      "title": "Background Video Component",
+      "description": "# Background Video Component\n\nThis component handles the video background in the hero section. Features include:\n\n1. Lazy loading of the video to improve performance\n2. A placeholder image that shows while the video loads\n3. Responsive design that works on both mobile and desktop\n4. Auto-playing, muted, and looping video for background effect\n\nThe component is designed to create an engaging visual experience without affecting page load performance."
+    },
+    {
+      "file": "src/components/ContactForm.js",
+      "line": 1,
+      "title": "Contact Form Component",
+      "description": "# Contact Form Component\n\nThis form handles user submissions and inquiries. Key features:\n\n1. Form validation for required fields\n2. Success and error states for form submission\n3. Integration with backend API for form processing\n4. Styled consistently with the neo-brutalist design language\n\nWhen a user submits the form, their information is sent to the backend via an API call."
+    },
+    {
+      "file": "src/components/Footer.js",
+      "line": 1,
+      "title": "Footer Component",
+      "description": "# Footer Component\n\nThe Footer component appears at the bottom of every page. It includes:\n\n1. Company contact information\n2. Navigation links to key pages\n3. Social media links\n4. Copyright information\n\nThe footer maintains the site's consistent design language and provides important navigational elements for users."
+    },
+    {
+      "file": "src/pages/ServicesPage.js",
+      "line": 1,
+      "title": "Services Page",
+      "description": "# Services Page\n\nThis is one of the most feature-rich pages in the site. It includes:\n\n1. Tabbed navigation for different content sections (Services, Pricing, Process, FAQ, Resources)\n2. Interactive pricing calculator\n3. Process timeline visualization\n4. Accordion-style FAQ section\n5. Resource documents section with links to downloadable resources\n\nThe page uses state management to handle the different tabs and interactive elements."
+    },
+    {
+      "file": "src/pages/ServicesPage.js",
+      "line": 678,
+      "title": "Resources Tab",
+      "description": "# Resources Tab\n\nThe Resources tab on the Services page links to various client resources, including:\n\n1. Project Planner Document\n2. Web Project Budget Guide\n3. Various articles on web development topics\n\nThese resources are HTML documents that can be viewed independently but are linked from this central hub."
+    },
+    {
+      "file": "public/resources/project-planner.html",
+      "line": 1,
+      "title": "Interactive Project Planner",
+      "description": "# Interactive Project Planner\n\nThis is an interactive HTML document that helps clients plan their web projects. Features include:\n\n1. Form fields for project information\n2. Business goals worksheet\n3. Feature prioritization template\n4. Content collection checklist\n5. Save/load functionality using localStorage\n6. Print and email capabilities\n\nThis document uses JavaScript to provide interactivity without requiring a full React application."
+    },
+    {
+      "file": "public/resources/project-planner.html",
+      "line": 472,
+      "title": "Navigation Between Resources",
+      "description": "# Navigation Between Resources\n\nThe \"Back to Resources\" link uses a custom JavaScript function to handle navigation back to the Services page. This function:\n\n1. Checks if the document is in an iframe and navigates the parent window if it is\n2. Uses browser history if the user came from the services page\n3. Falls back to direct navigation if needed\n\nThis ensures smooth navigation between the resources and the main site."
+    },
+    {
+      "file": "src/pages/ProjectsPage.js",
+      "line": 1,
+      "title": "Projects Page",
+      "description": "# Projects Page\n\nThe Projects page displays the company's portfolio of work. Features include:\n\n1. Project cards with images and descriptions\n2. Filtering capability by project type\n3. Animated transitions between projects\n4. Links to detailed project pages\n\nEach project card is clickable and leads to a detailed view of that specific project."
+    },
+    {
+      "file": "src/pages/ContactPage.js",
+      "line": 1,
+      "title": "Contact Page",
+      "description": "# Contact Page\n\nThis page provides a dedicated contact experience with:\n\n1. A full-page contact form\n2. Company information and address\n3. Map integration\n4. Alternative contact methods\n\nWhen a form is submitted successfully, users are redirected to a thank you page."
+    },
+    {
+      "file": "src/index.css",
+      "line": 1,
+      "title": "CSS Styling",
+      "description": "# CSS Styling\n\nThis file contains global styles and Tailwind CSS directives. Key aspects include:\n\n1. Tailwind CSS imports and configuration\n2. Custom animations for page elements\n3. Global typography settings\n4. Color scheme definitions\n\nThe site primarily uses Tailwind CSS utility classes for styling, with minimal custom CSS."
+    },
+    {
+      "file": "tailwind.config.js",
+      "line": 1,
+      "title": "Tailwind Configuration",
+      "description": "# Tailwind Configuration\n\nThis file configures Tailwind CSS for the project. It includes:\n\n1. Custom color palette definitions\n2. Extended theme settings\n3. Configuration for responsive breakpoints\n4. Plugin configurations\n\nTailwind CSS is used throughout the project for consistent, responsive styling."
+    },
+    {
+      "title": "Conclusion",
+      "description": "# Tour Conclusion\n\nYou've now seen the key components and architecture of the BlvckSmith website. The site is built with:\n\n- React for component-based UI development\n- React Router for navigation\n- Tailwind CSS for styling\n- Custom JavaScript for interactive elements\n\nThe design follows a neo-brutalist aesthetic while maintaining modern web development practices for performance and user experience.\n\n## What's Next\n\n- Explore the components in more depth\n- Review the responsive design implementation\n- Check out the backend server.js file to understand the API\n- Experiment with the interactive resources\n\nThank you for taking this tour of the BlvckSmith website codebase!"
+    }
+  ]
+}
