@@ -727,7 +727,7 @@ function ServicesPage() {
                     </div>
                   </div>
                   
-                  <a href="/resources/project-planner.html" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(250,204,21,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
+                  <a href="/blvcksmith/resources/project-planner.html" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(250,204,21,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
                     View Document
                   </a>
                 </div>
@@ -764,7 +764,7 @@ function ServicesPage() {
                     </div>
                   </div>
                   
-                  <a href="/resources/budget-guide.html" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(250,204,21,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
+                  <a href="/blvcksmith/resources/budget-guide.html" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(250,204,21,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
                     View Document
                   </a>
                 </div>
@@ -775,22 +775,22 @@ function ServicesPage() {
                     <div>
                       <h3 className="font-semibold mb-2">Understanding Web Development Contracts</h3>
                       <p className="text-sm mb-3">Learn about the key elements of a web development contract and what to look for before signing.</p>
-                      <a href="/resources/web-development-contracts.html" className="text-[#000000] font-medium underline">Read Article →</a>
+                      <a href="/blvcksmith/resources/web-development-contracts.html" className="text-[#000000] font-medium underline">Read Article →</a>
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">5 Questions to Ask Before Hiring a Developer</h3>
                       <p className="text-sm mb-3">Important questions that will help you identify the right development partner for your project.</p>
-                      <a href="/resources/hiring-developer-questions.html" className="text-[#000000] font-medium underline">Read Article →</a>
+                      <a href="/blvcksmith/resources/hiring-developer-questions.html" className="text-[#000000] font-medium underline">Read Article →</a>
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Preparing Content for Your Website</h3>
                       <p className="text-sm mb-3">A guide to gathering and organizing content that will make your development process smoother.</p>
-                      <a href="/resources/preparing-website-content.html" className="text-[#000000] font-medium underline">Read Article →</a>
+                      <a href="/blvcksmith/resources/preparing-website-content.html" className="text-[#000000] font-medium underline">Read Article →</a>
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Web Security Essentials for Business Owners</h3>
                       <p className="text-sm mb-3">What you need to know about keeping your website secure and your customer data protected.</p>
-                      <a href="/resources/web-security-essentials.html" className="text-[#000000] font-medium underline">Read Article →</a>
+                      <a href="/blvcksmith/resources/web-security-essentials.html" className="text-[#000000] font-medium underline">Read Article →</a>
                     </div>
                   </div>
                 </div>
