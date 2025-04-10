@@ -6,16 +6,28 @@ function ServicesPage() {
   // Set initial active tab
   const [activeTab, setActiveTab] = useState('services');
   
-  // Check for tab parameter in URL to set active tab and scroll to top
+  // Check for tab parameter in URL to set active tab and scroll to element
   useEffect(() => {
-    // Scroll to top when component mounts
+    // First run the default scroll to top
     window.scrollTo(0, 0);
     
     // Check for tab in search params
     const urlParams = new URLSearchParams(window.location.search);
     const tabParam = urlParams.get('tab');
+    
     if (tabParam) {
       setActiveTab(tabParam);
+      
+      // Allow time for the DOM to update with the new tab content
+      setTimeout(() => {
+        // If specifically the resources tab, scroll to the resources section
+        if (tabParam === 'resources') {
+          const resourcesSection = document.getElementById('resourcesSection');
+          if (resourcesSection) {
+            resourcesSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }, 100);
     }
     // Also check for hash fragment for backward compatibility
     else if (window.location.hash === '#resources') {
@@ -779,7 +791,7 @@ function ServicesPage() {
                   </a>
                 </div>
                 
-                <div className="bg-[#E4E4E7] border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:col-span-2">
+                <div id="resourcesSection" className="bg-[#E4E4E7] border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:col-span-2">
                   <h2 className="text-2xl font-bold mb-4 font-['Orbitron'] text-[#000000]">Helpful Articles</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
