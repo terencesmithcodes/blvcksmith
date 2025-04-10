@@ -19,6 +19,7 @@ function Footer() {
             
             <div className="w-full md:w-auto">
               <h3 className="text-lg font-semibold mb-2 font-['Orbitron']">Address</h3>
+              <p className="text-[#E4E4E7]">123 Web Dev Lane</p>
               <p className="text-[#E4E4E7]">Atlanta, GA 30308</p>
             </div>
           </div>
