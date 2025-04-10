@@ -1,8 +1,70 @@
 import ProfileImage from '../components/ProfileImage'
 
+import React, { useState, useEffect } from 'react';
+
 function HomePage() {
+  // State to track if user has scrolled
+  const [hasScrolled, setHasScrolled] = useState(false);
+  
+  // Setup scroll event listener to track user scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100 && !hasScrolled) {
+        setHasScrolled(true);
+      } else if (window.scrollY <= 100 && hasScrolled) {
+        setHasScrolled(false);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [hasScrolled]);
+  
+  // Function to smoothly scroll down
+  const scrollDown = () => {
+    window.scrollTo({
+      top: window.innerHeight * 0.8,
+      behavior: 'smooth'
+    });
+  };
+  
   return (
     <div className="bg-gray-100">
+      {/* Floating Scroll Indicator Arrow */}
+      {!hasScrolled && (
+        <div 
+          onClick={scrollDown}
+          className="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer animate-bounce"
+          style={{
+            width: "40px",
+            height: "40px",
+            backgroundColor: "#FACC15",
+            borderRadius: "50%",
+            border: "2px solid black",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            boxShadow: "4px 4px 0px 0px rgba(0,0,0,1)"
+          }}
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      )}
       {/* Hero Section */}
       <section className="bg-gray-900 text-white py-20">
         <div className="container mx-auto px-6 text-center">
