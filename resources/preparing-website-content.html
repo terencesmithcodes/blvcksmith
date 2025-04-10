@@ -352,18 +352,8 @@
     
     <script>
         function goBackToResources() {
-            // Try to navigate to parent window if in iframe
-            if (window.parent && window.parent !== window) {
-                window.parent.location.href = '/services';
-                return;
-            }
-            
-            // Otherwise try to use history or direct navigation
-            if (document.referrer.includes('/services')) {
-                window.history.back();
-            } else {
-                window.location.href = '/services';
-            }
+            // Force direct navigation to services page
+            window.location.href = '/services';
         }
     </script>
 </body>
