@@ -5,6 +5,33 @@ import { Link } from 'react-router-dom';
 function ServicesPage() {
   // Set initial active tab
   const [activeTab, setActiveTab] = useState('services');
+  // State to track if user has scrolled
+  const [hasScrolled, setHasScrolled] = useState(false);
+  
+  // Setup scroll event listener to track user scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100 && !hasScrolled) {
+        setHasScrolled(true);
+      } else if (window.scrollY <= 100 && hasScrolled) {
+        setHasScrolled(false);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [hasScrolled]);
+  
+  // Function to smoothly scroll down
+  const scrollDown = () => {
+    window.scrollTo({
+      top: window.innerHeight * 0.8,
+      behavior: 'smooth'
+    });
+  };
   
   // Check for tab parameter in URL to set active tab and scroll to specific resource section
   useEffect(() => {
@@ -284,6 +311,39 @@ function ServicesPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FAFAFA]">
+      {/* Floating Scroll Indicator Arrow */}
+      {!hasScrolled && (
+        <div 
+          onClick={scrollDown}
+          className="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer animate-bounce"
+          style={{
+            width: "40px",
+            height: "40px",
+            backgroundColor: "#FACC15",
+            borderRadius: "50%",
+            border: "2px solid black",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            boxShadow: "4px 4px 0px 0px rgba(0,0,0,1)"
+          }}
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      )}
+      
       {/* Header */}
       <header className="bg-[#000000] text-[#FAFAFA] py-4 border-b-4 border-[#FACC15]">
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
