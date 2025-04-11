@@ -7,6 +7,8 @@ import ContactPage from './pages/ContactPage'
 import ThanksPage from './pages/ThanksPage' 
 import ServicesPage from './pages/ServicesPage'
 import NotFound from './pages/NotFound'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfService'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -17,6 +19,8 @@ root.render(
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/thanks" element={<ThanksPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </HashRouter>

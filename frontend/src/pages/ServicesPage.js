@@ -511,25 +511,25 @@ function ServicesPage() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
                         <button 
                           onClick={() => setProjectType('basic')}
-                          className={`p-3 border-2 border-black ${projectType === 'basic' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black text-secondary ${projectType === 'basic' ? 'bg-accent font-bold text-black' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Basic Website
                         </button>
                         <button 
                           onClick={() => setProjectType('ecommerce')}
-                          className={`p-3 border-2 border-black ${projectType === 'ecommerce' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black text-secondary ${projectType === 'ecommerce' ? 'bg-accent font-bold text-black' : 'bg-white hover:bg-gray-100'}`}
                         >
                           E-commerce Store
                         </button>
                         <button 
                           onClick={() => setProjectType('webapp')}
-                          className={`p-3 border-2 border-black ${projectType === 'webapp' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black text-secondary ${projectType === 'webapp' ? 'bg-accent font-bold text-black' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Web Application
                         </button>
                         <button 
                           onClick={() => setProjectType('api')}
-                          className={`p-3 border-2 border-black ${projectType === 'api' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black text-secondary ${projectType === 'api' ? 'bg-accent font-bold text-black' : 'bg-white hover:bg-gray-100'}`}
                         >
                           API Development
                         </button>
@@ -541,19 +541,19 @@ function ServicesPage() {
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <button 
                           onClick={() => setProjectScope('small')}
-                          className={`p-3 border-2 border-black ${projectScope === 'small' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black text-secondary ${projectScope === 'small' ? 'bg-accent font-bold text-black' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Small (2-5 pages/features)
                         </button>
                         <button 
                           onClick={() => setProjectScope('medium')}
-                          className={`p-3 border-2 border-black ${projectScope === 'medium' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black text-secondary ${projectScope === 'medium' ? 'bg-accent font-bold text-black' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Medium (5-10 pages/features)
                         </button>
                         <button 
                           onClick={() => setProjectScope('large')}
-                          className={`p-3 border-2 border-black ${projectScope === 'large' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black text-secondary ${projectScope === 'large' ? 'bg-accent font-bold text-black' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Large (10+ pages/features)
                         </button>
@@ -565,19 +565,19 @@ function ServicesPage() {
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <button 
                           onClick={() => setTimeframe('urgent')}
-                          className={`p-3 border-2 border-black ${timeframe === 'urgent' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black text-secondary ${timeframe === 'urgent' ? 'bg-accent font-bold text-black' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Urgent (ASAP)
                         </button>
                         <button 
                           onClick={() => setTimeframe('standard')}
-                          className={`p-3 border-2 border-black ${timeframe === 'standard' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black text-secondary ${timeframe === 'standard' ? 'bg-accent font-bold text-black' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Standard (1-3 months)
                         </button>
                         <button 
                           onClick={() => setTimeframe('flexible')}
-                          className={`p-3 border-2 border-black ${timeframe === 'flexible' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black text-secondary ${timeframe === 'flexible' ? 'bg-accent font-bold text-black' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Flexible (3+ months)
                         </button>
