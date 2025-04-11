@@ -6,6 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <!-- Force cache refresh with timestamp: 1713229000 -->
     <title>BlvckSmith Project Planner</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -195,6 +196,21 @@
             }
         }
     </style>
+    <script>
+        window.onload = function() {
+            // Style checkboxes
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.style.accentColor = '#10B981'; // Accent color (vibrant emerald)
+            });
+            
+            // Style radio buttons
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.style.accentColor = '#10B981'; // Accent color (vibrant emerald)
+            });
+        };
+    </script>
 </head>
 <body>
     <header>
@@ -205,7 +221,7 @@
     </header>
     
     <div class="container">
-        <a href="https://blvcksmith.com/#/services?tab=resources&source=planner" class="back-link">← Back to Resources</a>
+        <a href="https://blvcksmith.com/#/services?tab=resources&source=planner&t=1713229000" class="back-link">← Back to Client Resources</a>
         
         <form id="projectPlannerForm">
             <section class="section">
