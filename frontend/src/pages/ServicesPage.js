@@ -446,7 +446,7 @@ function ServicesPage() {
                         {service.fullDescription.map((point, index) => (
                           <li key={index} className="flex items-start">
                             <span className="text-accent mr-2">•</span>
-                            <span>{point}</span>
+                            <span className="text-secondary">{point}</span>
                           </li>
                         ))}
                       </ul>
@@ -458,7 +458,7 @@ function ServicesPage() {
                         {service.benefits.map((benefit, index) => (
                           <li key={index} className="flex items-start">
                             <span className="text-accent-2 mr-2">✓</span>
-                            <span>{benefit}</span>
+                            <span className="text-secondary">{benefit}</span>
                           </li>
                         ))}
                       </ul>
@@ -470,7 +470,7 @@ function ServicesPage() {
                         {service.priceFactors.map((factor, index) => (
                           <li key={index} className="flex items-start">
                             <span className="text-secondary mr-2">$</span>
-                            <span>{factor}</span>
+                            <span className="text-secondary">{factor}</span>
                           </li>
                         ))}
                       </ul>
