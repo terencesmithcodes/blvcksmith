@@ -587,7 +587,7 @@ function ServicesPage() {
                     <div className="pt-6 border-t-2 border-black">
                       <div className="text-center">
                         <div className="text-lg font-semibold mb-2 text-secondary">Estimated Project Cost</div>
-                        <div className="text-3xl font-bold text-secondary">${calculateEstimatedPrice().toLocaleString()}</div>
+                        <div className="text-3xl font-bold text-accent-2">${calculateEstimatedPrice().toLocaleString()}</div>
                         <p className="mt-3 text-sm text-secondary">This is a rough estimate. Contact us for a detailed quote.</p>
                       </div>
                     </div>
@@ -663,7 +663,7 @@ function ServicesPage() {
                   {processSteps.map((step, index) => (
                     <div key={index} className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} items-center`}>
                       {/* Timeline dot */}
-                      <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-[#FACC15] border-4 border-black rounded-full z-10"></div>
+                      <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-accent border-4 border-black rounded-full z-10"></div>
                       
                       {/* Content box */}
                       <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'} pl-12 md:pl-0`}>
@@ -825,7 +825,7 @@ function ServicesPage() {
                     </div>
                   </div>
                   
-                  <a href="/resources/project-planner.html?source=planner" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(250,204,21,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
+                  <a href="/resources/project-planner.html?source=planner" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(16,185,129,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
                     View Document
                   </a>
                 </div>
@@ -862,7 +862,7 @@ function ServicesPage() {
                     </div>
                   </div>
                   
-                  <a href="/resources/budget-guide.html?source=budget" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(250,204,21,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
+                  <a href="/resources/budget-guide.html?source=budget" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(16,185,129,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
                     View Document
                   </a>
                 </div>
