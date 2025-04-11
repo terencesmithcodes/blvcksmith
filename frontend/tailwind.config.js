@@ -24,12 +24,12 @@ module.exports = {
         'beam': 'beam 8s linear infinite',
       },
       colors: {
-        primary: '#121212',     /* Obsidian */
-        secondary: '#2F3542',   /* Dark slate */
-        accent: '#E74C3C',      /* Ember red */
-        'accent-2': '#38A3A5',  /* Teal */
-        'text': '#F5F5F5',      /* Off-white */
-        'text-muted': '#B8B8B8' /* Muted text */
+        primary: '#111827',     /* Rich black */
+        secondary: '#1F2937',   /* Charcoal */
+        accent: '#10B981',      /* Vibrant emerald */
+        'accent-2': '#F97316',  /* Coral */
+        'text': '#E5E7EB',      /* Light gray */
+        'text-muted': '#9CA3AF' /* Medium gray */
       }
     },
   },
