@@ -310,7 +310,7 @@ function ServicesPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#FAFAFA]">
+    <div className="flex flex-col min-h-screen bg-primary">
       {/* Floating Scroll Indicator Arrow */}
       {!hasScrolled && (
         <div 
@@ -319,7 +319,7 @@ function ServicesPage() {
           style={{
             width: "40px",
             height: "40px",
-            backgroundColor: "#FACC15",
+            backgroundColor: "#10B981",
             borderRadius: "50%",
             border: "2px solid black",
             display: "flex",
@@ -345,17 +345,17 @@ function ServicesPage() {
       )}
       
       {/* Header */}
-      <header className="bg-[#000000] text-[#FAFAFA] py-4 border-b-4 border-[#FACC15]">
+      <header className="bg-secondary text-text py-4 border-b-4 border-accent">
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <div className="w-8 h-8 mr-2 bg-white border border-[#FACC15] rounded-sm overflow-hidden">
+            <div className="w-8 h-8 mr-2 bg-white border border-accent rounded-sm overflow-hidden">
               <img src="/images/logo.svg" alt="BS Logo" className="w-full h-full object-contain" />
             </div>
-            <h1 className="text-xl font-bold font-['Orbitron']">BlvckSmith</h1>
+            <h1 className="text-xl font-bold">BlvckSmith</h1>
           </Link>
           <Link 
             to="/"
-            className="text-[#FAFAFA] hover:text-[#FACC15] transition-colors py-1 px-3 border-2 border-[#FACC15] hover:bg-[#000000]/20"
+            className="text-text hover:text-accent transition-colors py-1 px-3 border-2 border-accent hover:bg-secondary/20"
           >
             Back to Home
           </Link>
@@ -363,35 +363,35 @@ function ServicesPage() {
       </header>
 
       {/* Tabs Navigation */}
-      <div className="bg-[#000000] text-[#FAFAFA] px-4 py-2">
+      <div className="bg-secondary text-text px-4 py-2">
         <div className="container mx-auto flex flex-wrap justify-center space-x-1 sm:space-x-4">
           <button 
             onClick={() => setActiveTab('services')}
-            className={`px-4 py-2 font-medium transition-colors ${activeTab === 'services' ? 'bg-[#FACC15] text-black' : 'hover:bg-white/10'}`}
+            className={`px-4 py-2 font-medium transition-colors ${activeTab === 'services' ? 'bg-accent text-black' : 'hover:bg-white/10'}`}
           >
             Services
           </button>
           <button 
             onClick={() => setActiveTab('pricing')}
-            className={`px-4 py-2 font-medium transition-colors ${activeTab === 'pricing' ? 'bg-[#FACC15] text-black' : 'hover:bg-white/10'}`}
+            className={`px-4 py-2 font-medium transition-colors ${activeTab === 'pricing' ? 'bg-accent text-black' : 'hover:bg-white/10'}`}
           >
             Pricing
           </button>
           <button 
             onClick={() => setActiveTab('process')}
-            className={`px-4 py-2 font-medium transition-colors ${activeTab === 'process' ? 'bg-[#FACC15] text-black' : 'hover:bg-white/10'}`}
+            className={`px-4 py-2 font-medium transition-colors ${activeTab === 'process' ? 'bg-accent text-black' : 'hover:bg-white/10'}`}
           >
             Our Process
           </button>
           <button 
             onClick={() => setActiveTab('faq')}
-            className={`px-4 py-2 font-medium transition-colors ${activeTab === 'faq' ? 'bg-[#FACC15] text-black' : 'hover:bg-white/10'}`}
+            className={`px-4 py-2 font-medium transition-colors ${activeTab === 'faq' ? 'bg-accent text-black' : 'hover:bg-white/10'}`}
           >
             FAQ
           </button>
           <button 
             onClick={() => setActiveTab('resources')}
-            className={`px-4 py-2 font-medium transition-colors ${activeTab === 'resources' ? 'bg-[#FACC15] text-black' : 'hover:bg-white/10'}`}
+            className={`px-4 py-2 font-medium transition-colors ${activeTab === 'resources' ? 'bg-accent text-black' : 'hover:bg-white/10'}`}
           >
             Resources
           </button>
