@@ -404,23 +404,23 @@ function ServicesPage() {
           {/* Services Tab */}
           {activeTab === 'services' && (
             <>
-              <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center font-['Orbitron'] text-[#000000]">Our Services</h1>
-              <p className="text-[#000000] text-center mb-12 max-w-3xl mx-auto font-medium">
+              <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-text">Our Services</h1>
+              <p className="text-text text-center mb-12 max-w-3xl mx-auto font-medium">
                 At BlvckSmith, we offer a comprehensive range of web development and technical services to help your business thrive in the digital world. Each service is tailored to meet your specific needs and objectives.
               </p>
 
               {/* Transparency Badges */}
               <div className="flex flex-wrap justify-center gap-4 mb-12">
-                <div className="bg-[#000000] text-white px-4 py-2 font-medium border-2 border-[#000000] flex items-center">
-                  <span className="text-[#FACC15] mr-2">✓</span>
+                <div className="bg-secondary text-text px-4 py-2 font-medium border-2 border-secondary flex items-center">
+                  <span className="text-accent mr-2">✓</span>
                   No Hidden Fees
                 </div>
-                <div className="bg-[#000000] text-white px-4 py-2 font-medium border-2 border-[#000000] flex items-center">
-                  <span className="text-[#FACC15] mr-2">✓</span>
+                <div className="bg-secondary text-text px-4 py-2 font-medium border-2 border-secondary flex items-center">
+                  <span className="text-accent mr-2">✓</span>
                   Clear Milestone Payments
                 </div>
-                <div className="bg-[#000000] text-white px-4 py-2 font-medium border-2 border-[#000000] flex items-center">
-                  <span className="text-[#FACC15] mr-2">✓</span>
+                <div className="bg-secondary text-text px-4 py-2 font-medium border-2 border-secondary flex items-center">
+                  <span className="text-accent mr-2">✓</span>
                   Scope Protection Guarantee
                 </div>
               </div>
@@ -430,22 +430,22 @@ function ServicesPage() {
                 {serviceDetails.map((service) => (
                   <div 
                     key={service.id} 
-                    className="bg-[#E4E4E7] border-2 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+                    className="bg-text border-2 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
                   >
                     <div className="flex flex-wrap justify-between items-start mb-4">
-                      <h2 className="text-2xl font-bold font-['Orbitron'] text-[#000000]">{service.title}</h2>
-                      <div className="mt-2 sm:mt-0 bg-[#FACC15] text-black px-3 py-1 font-bold border-2 border-black">
+                      <h2 className="text-2xl font-bold text-secondary">{service.title}</h2>
+                      <div className="mt-2 sm:mt-0 bg-accent text-black px-3 py-1 font-bold border-2 border-black">
                         Starting at {service.startingPrice}
                       </div>
                     </div>
-                    <p className="text-[#000000] font-medium mb-6">{service.description}</p>
+                    <p className="text-secondary font-medium mb-6">{service.description}</p>
 
                     <div className="mb-6">
-                      <h3 className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">What We Offer:</h3>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary">What We Offer:</h3>
                       <ul className="space-y-2">
                         {service.fullDescription.map((point, index) => (
                           <li key={index} className="flex items-start">
-                            <span className="text-[#FACC15] mr-2">•</span>
+                            <span className="text-accent mr-2">•</span>
                             <span>{point}</span>
                           </li>
                         ))}
@@ -453,11 +453,11 @@ function ServicesPage() {
                     </div>
 
                     <div className="mb-6">
-                      <h3 className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Benefits:</h3>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary">Benefits:</h3>
                       <ul className="space-y-2">
                         {service.benefits.map((benefit, index) => (
                           <li key={index} className="flex items-start">
-                            <span className="text-[#EF4444] mr-2">✓</span>
+                            <span className="text-accent-2 mr-2">✓</span>
                             <span>{benefit}</span>
                           </li>
                         ))}
@@ -465,11 +465,11 @@ function ServicesPage() {
                     </div>
 
                     <div className="mb-6">
-                      <h3 className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Pricing Factors:</h3>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary">Pricing Factors:</h3>
                       <ul className="space-y-2">
                         {service.priceFactors.map((factor, index) => (
                           <li key={index} className="flex items-start">
-                            <span className="text-[#000000] mr-2">$</span>
+                            <span className="text-secondary mr-2">$</span>
                             <span>{factor}</span>
                           </li>
                         ))}
@@ -477,10 +477,10 @@ function ServicesPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Technologies:</h3>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary">Technologies:</h3>
                       <div className="flex flex-wrap gap-2">
                         {service.technologies.map((tech, index) => (
-                          <span key={index} className="bg-[#000000] text-white px-3 py-1 text-sm font-medium border-2 border-[#000000]">
+                          <span key={index} className="bg-secondary text-text px-3 py-1 text-sm font-medium border-2 border-secondary">
                             {tech}
                           </span>
                         ))}
@@ -495,13 +495,13 @@ function ServicesPage() {
           {/* Pricing Tab */}
           {activeTab === 'pricing' && (
             <>
-              <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center font-['Orbitron'] text-[#000000]">Pricing & Estimates</h1>
-              <p className="text-[#000000] text-center mb-12 max-w-3xl mx-auto font-medium">
+              <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-text">Pricing & Estimates</h1>
+              <p className="text-text text-center mb-12 max-w-3xl mx-auto font-medium">
                 We believe in transparent pricing that reflects the value we deliver. Each project is unique, but we provide starting price ranges to help you budget appropriately.
               </p>
               
               <div className="max-w-4xl mx-auto mb-16">
-                <div className="bg-[#E4E4E7] border-2 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="bg-text border-2 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                   <h2 className="text-2xl font-bold mb-6 font-['Orbitron'] text-[#000000]">Project Estimate Calculator</h2>
                   <p className="mb-6 font-medium">Use this calculator to get a rough estimate for your project. Actual pricing will depend on specific requirements and will be determined during our consultation.</p>
                   
@@ -596,7 +596,7 @@ function ServicesPage() {
               </div>
 
               <div className="max-w-4xl mx-auto">
-                <div className="bg-[#E4E4E7] border-2 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="bg-text border-2 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                   <h2 className="text-2xl font-bold mb-6 font-['Orbitron'] text-[#000000]">Our Pricing Philosophy</h2>
                   
                   <div className="space-y-6">
@@ -649,8 +649,8 @@ function ServicesPage() {
           {/* Process Tab */}
           {activeTab === 'process' && (
             <>
-              <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center font-['Orbitron'] text-[#000000]">Our Development Process</h1>
-              <p className="text-[#000000] text-center mb-12 max-w-3xl mx-auto font-medium">
+              <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-text">Our Development Process</h1>
+              <p className="text-text text-center mb-12 max-w-3xl mx-auto font-medium">
                 We follow a structured yet flexible process that ensures quality results while adapting to your specific needs. Transparency and collaboration are central to our approach.
               </p>
               
@@ -688,7 +688,7 @@ function ServicesPage() {
               </div>
               
               <div className="max-w-4xl mx-auto">
-                <div className="bg-[#E4E4E7] border-2 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="bg-text border-2 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                   <h2 className="text-2xl font-bold mb-6 font-['Orbitron'] text-[#000000]">Scope Management</h2>
                   
                   <div className="space-y-6">
@@ -751,8 +751,8 @@ function ServicesPage() {
           {/* FAQ Tab */}
           {activeTab === 'faq' && (
             <>
-              <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center font-['Orbitron'] text-[#000000]">Frequently Asked Questions</h1>
-              <p className="text-[#000000] text-center mb-12 max-w-3xl mx-auto font-medium">
+              <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-text">Frequently Asked Questions</h1>
+              <p className="text-text text-center mb-12 max-w-3xl mx-auto font-medium">
                 We've compiled answers to the most common questions our clients ask. If you don't find what you're looking for, please contact us directly.
               </p>
               
@@ -784,14 +784,14 @@ function ServicesPage() {
           {/* Resources Tab */}
           {activeTab === 'resources' && (
             <>
-              <h1 id="clientResourcesSection" className="text-3xl sm:text-4xl font-bold mb-6 text-center font-['Orbitron'] text-[#000000]">Client Resources</h1>
-              <p className="text-[#000000] text-center mb-12 max-w-3xl mx-auto font-medium">
+              <h1 id="clientResourcesSection" className="text-3xl sm:text-4xl font-bold mb-6 text-center text-text">Client Resources</h1>
+              <p className="text-text text-center mb-12 max-w-3xl mx-auto font-medium">
                 We've created these resources to help you plan, prepare, and get the most out of your web development project.
               </p>
               
               <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div id="plannerSection" className="bg-[#E4E4E7] border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <div className="bg-[#FACC15] -mt-10 -ml-10 p-4 border-2 border-black inline-block">
+                <div id="plannerSection" className="bg-text border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="bg-accent -mt-10 -ml-10 p-4 border-2 border-black inline-block">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                       <polyline points="14 2 14 8 20 8"></polyline>
@@ -830,8 +830,8 @@ function ServicesPage() {
                   </a>
                 </div>
                 
-                <div id="budgetGuideSection" className="bg-[#E4E4E7] border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <div className="bg-[#FACC15] -mt-10 -ml-10 p-4 border-2 border-black inline-block">
+                <div id="budgetGuideSection" className="bg-text border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="bg-accent -mt-10 -ml-10 p-4 border-2 border-black inline-block">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="12" y1="1" x2="12" y2="23"></line>
                       <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
@@ -867,7 +867,7 @@ function ServicesPage() {
                   </a>
                 </div>
                 
-                <div id="articlesSection" className="bg-[#E4E4E7] border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:col-span-2">
+                <div id="articlesSection" className="bg-text border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:col-span-2">
                   <h2 className="text-2xl font-bold mb-4 font-['Orbitron'] text-[#000000]">Helpful Articles</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -898,13 +898,13 @@ function ServicesPage() {
 
           {/* CTA */}
           <div className="mt-16 text-center">
-            <h2 className="text-2xl font-bold mb-4 font-['Orbitron'] text-[#000000]">Ready to Get Started?</h2>
-            <p className="text-[#000000] mb-6 max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold mb-4 text-text">Ready to Get Started?</h2>
+            <p className="text-text mb-6 max-w-2xl mx-auto">
               Contact us today to discuss your project requirements and discover how we can help your business succeed online.
             </p>
             <Link
               to="/contact"
-              className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(250,204,21,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none"
+              className="inline-flex justify-center border-2 border-black bg-secondary py-2 px-6 text-md font-bold text-text shadow-[5px_5px_0px_0px_rgba(16,185,129,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none"
             >
               Contact Us
             </Link>
