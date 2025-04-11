@@ -667,15 +667,15 @@ function ServicesPage() {
                       
                       {/* Content box */}
                       <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'} pl-12 md:pl-0`}>
-                        <div className="bg-[#E4E4E7] border-2 border-black p-5 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                        <div className="bg-text border-2 border-black p-5 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                           <div className="flex justify-between items-start mb-3">
-                            <h3 className="text-xl font-bold font-['Orbitron'] text-[#000000]">{index + 1}. {step.title}</h3>
-                            <span className="bg-[#000000] text-white px-2 py-1 text-sm font-medium">{step.duration}</span>
+                            <h3 className="text-xl font-bold text-secondary">{index + 1}. {step.title}</h3>
+                            <span className="bg-secondary text-text px-2 py-1 text-sm font-medium">{step.duration}</span>
                           </div>
-                          <p className="mb-4">{step.description}</p>
+                          <p className="mb-4 text-secondary">{step.description}</p>
                           <div>
-                            <h4 className="font-semibold mb-2 text-[#000000]">Your Responsibilities:</h4>
-                            <p className="text-sm">{step.clientResponsibilities}</p>
+                            <h4 className="font-semibold mb-2 text-secondary">Your Responsibilities:</h4>
+                            <p className="text-sm text-secondary">{step.clientResponsibilities}</p>
                           </div>
                         </div>
                       </div>
@@ -689,30 +689,30 @@ function ServicesPage() {
               
               <div className="max-w-4xl mx-auto">
                 <div className="bg-text border-2 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <h2 className="text-2xl font-bold mb-6 font-['Orbitron'] text-[#000000]">Scope Management</h2>
+                  <h2 className="text-2xl font-bold mb-6 text-secondary">Scope Management</h2>
                   
                   <div className="space-y-6">
-                    <p>Changes are a natural part of the development process. Here's how we handle them to keep your project on track:</p>
+                    <p className="text-secondary">Changes are a natural part of the development process. Here's how we handle them to keep your project on track:</p>
                     
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Clear Requirements Documentation</h3>
-                      <p>We start with detailed requirements documentation that serves as our shared understanding of the project scope. This becomes our baseline for identifying and managing changes.</p>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary">Clear Requirements Documentation</h3>
+                      <p className="text-secondary">We start with detailed requirements documentation that serves as our shared understanding of the project scope. This becomes our baseline for identifying and managing changes.</p>
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Change Request Process</h3>
-                      <p>When new requirements or changes arise, we follow a structured process:</p>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary">Change Request Process</h3>
+                      <p className="text-secondary">When new requirements or changes arise, we follow a structured process:</p>
                       <ol className="list-decimal pl-6 space-y-2 mt-2">
-                        <li>Document the requested change</li>
-                        <li>Analyze impact on timeline, budget, and other features</li>
-                        <li>Present options with clear estimates</li>
-                        <li>Implement changes only after your approval</li>
+                        <li className="text-secondary">Document the requested change</li>
+                        <li className="text-secondary">Analyze impact on timeline, budget, and other features</li>
+                        <li className="text-secondary">Present options with clear estimates</li>
+                        <li className="text-secondary">Implement changes only after your approval</li>
                       </ol>
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Flexibility Buffer</h3>
-                      <p>We build a small flexibility buffer into our projects to accommodate minor changes without affecting the timeline or budget. This allows for refinements as the project evolves.</p>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary">Flexibility Buffer</h3>
+                      <p className="text-secondary">We build a small flexibility buffer into our projects to accommodate minor changes without affecting the timeline or budget. This allows for refinements as the project evolves.</p>
                     </div>
                     
                     <div className="pt-6 border-t-2 border-black">
@@ -760,10 +760,10 @@ function ServicesPage() {
                 {faqItems.map((faq, index) => (
                   <div 
                     key={index} 
-                    className="bg-[#E4E4E7] border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+                    className="bg-text border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
                   >
                     <button
-                      className="w-full px-6 py-4 text-left font-['Orbitron'] font-semibold flex justify-between items-center"
+                      className="w-full px-6 py-4 text-left font-semibold flex justify-between items-center text-secondary"
                       onClick={() => toggleFaq(index)}
                     >
                       <span>{faq.question}</span>
@@ -772,7 +772,7 @@ function ServicesPage() {
                     
                     {activeFaq === index && (
                       <div className="px-6 py-4 border-t-2 border-black">
-                        <p>{faq.answer}</p>
+                        <p className="text-secondary">{faq.answer}</p>
                       </div>
                     )}
                   </div>
@@ -801,27 +801,27 @@ function ServicesPage() {
                     </svg>
                   </div>
                   
-                  <h2 className="text-2xl font-bold mt-4 mb-3 font-['Orbitron'] text-[#000000]">Project Planner Document</h2>
-                  <p className="mb-6">A comprehensive guide to help you organize requirements, gather assets, and prepare for your web development project.</p>
+                  <h2 className="text-2xl font-bold mt-4 mb-3 text-secondary">Project Planner Document</h2>
+                  <p className="mb-6 text-secondary">A comprehensive guide to help you organize requirements, gather assets, and prepare for your web development project.</p>
                   
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span>Business goals worksheet</span>
+                      <span className="text-secondary">Business goals worksheet</span>
                     </div>
                     <div className="flex items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span>Feature prioritization template</span>
+                      <span className="text-secondary">Feature prioritization template</span>
                     </div>
                     <div className="flex items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span>Content collection checklist</span>
+                      <span className="text-secondary">Content collection checklist</span>
                     </div>
                   </div>
                   
@@ -838,27 +838,27 @@ function ServicesPage() {
                     </svg>
                   </div>
                   
-                  <h2 className="text-2xl font-bold mt-4 mb-3 font-['Orbitron'] text-[#000000]">Web Project Budget Guide</h2>
-                  <p className="mb-6">Learn how to effectively budget for your web development project with our comprehensive guide.</p>
+                  <h2 className="text-2xl font-bold mt-4 mb-3 text-secondary">Web Project Budget Guide</h2>
+                  <p className="mb-6 text-secondary">Learn how to effectively budget for your web development project with our comprehensive guide.</p>
                   
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span>Cost breakdown by project type</span>
+                      <span className="text-secondary">Cost breakdown by project type</span>
                     </div>
                     <div className="flex items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span>ROI calculation formulas</span>
+                      <span className="text-secondary">ROI calculation formulas</span>
                     </div>
                     <div className="flex items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span>Ongoing maintenance planning</span>
+                      <span className="text-secondary">Ongoing maintenance planning</span>
                     </div>
                   </div>
                   
@@ -868,27 +868,27 @@ function ServicesPage() {
                 </div>
                 
                 <div id="articlesSection" className="bg-text border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:col-span-2">
-                  <h2 className="text-2xl font-bold mb-4 font-['Orbitron'] text-[#000000]">Helpful Articles</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-secondary">Helpful Articles</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h3 className="font-semibold mb-2">Understanding Web Development Contracts</h3>
-                      <p className="text-sm mb-3">Learn about the key elements of a web development contract and what to look for before signing.</p>
-                      <a href="/resources/web-development-contracts.html?source=contracts" className="text-[#000000] font-medium underline">Read Article →</a>
+                      <h3 className="font-semibold mb-2 text-secondary">Understanding Web Development Contracts</h3>
+                      <p className="text-sm mb-3 text-secondary">Learn about the key elements of a web development contract and what to look for before signing.</p>
+                      <a href="/resources/web-development-contracts.html?source=contracts" className="text-secondary font-medium underline hover:text-accent">Read Article →</a>
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-2">5 Questions to Ask Before Hiring a Developer</h3>
-                      <p className="text-sm mb-3">Important questions that will help you identify the right development partner for your project.</p>
-                      <a href="/resources/hiring-developer-questions.html?source=hiring" className="text-[#000000] font-medium underline">Read Article →</a>
+                      <h3 className="font-semibold mb-2 text-secondary">5 Questions to Ask Before Hiring a Developer</h3>
+                      <p className="text-sm mb-3 text-secondary">Important questions that will help you identify the right development partner for your project.</p>
+                      <a href="/resources/hiring-developer-questions.html?source=hiring" className="text-secondary font-medium underline hover:text-accent">Read Article →</a>
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-2">Preparing Content for Your Website</h3>
-                      <p className="text-sm mb-3">A guide to gathering and organizing content that will make your development process smoother.</p>
-                      <a href="/resources/preparing-website-content.html?source=content" className="text-[#000000] font-medium underline">Read Article →</a>
+                      <h3 className="font-semibold mb-2 text-secondary">Preparing Content for Your Website</h3>
+                      <p className="text-sm mb-3 text-secondary">A guide to gathering and organizing content that will make your development process smoother.</p>
+                      <a href="/resources/preparing-website-content.html?source=content" className="text-secondary font-medium underline hover:text-accent">Read Article →</a>
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-2">Web Security Essentials for Business Owners</h3>
-                      <p className="text-sm mb-3">What you need to know about keeping your website secure and your customer data protected.</p>
-                      <a href="/resources/web-security-essentials.html?source=security" className="text-[#000000] font-medium underline">Read Article →</a>
+                      <h3 className="font-semibold mb-2 text-secondary">Web Security Essentials for Business Owners</h3>
+                      <p className="text-sm mb-3 text-secondary">What you need to know about keeping your website secure and your customer data protected.</p>
+                      <a href="/resources/web-security-essentials.html?source=security" className="text-secondary font-medium underline hover:text-accent">Read Article →</a>
                     </div>
                   </div>
                 </div>
