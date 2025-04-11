@@ -502,34 +502,34 @@ function ServicesPage() {
               
               <div className="max-w-4xl mx-auto mb-16">
                 <div className="bg-text border-2 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <h2 className="text-2xl font-bold mb-6 font-['Orbitron'] text-[#000000]">Project Estimate Calculator</h2>
-                  <p className="mb-6 font-medium">Use this calculator to get a rough estimate for your project. Actual pricing will depend on specific requirements and will be determined during our consultation.</p>
+                  <h2 className="text-2xl font-bold mb-6 text-secondary">Project Estimate Calculator</h2>
+                  <p className="mb-6 font-medium text-secondary">Use this calculator to get a rough estimate for your project. Actual pricing will depend on specific requirements and will be determined during our consultation.</p>
                   
                   <div className="space-y-6">
                     <div>
-                      <label className="block text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Project Type</label>
+                      <label className="block text-lg font-semibold mb-2 text-secondary">Project Type</label>
                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
                         <button 
                           onClick={() => setProjectType('basic')}
-                          className={`p-3 border-2 border-black ${projectType === 'basic' ? 'bg-[#FACC15] font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black ${projectType === 'basic' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Basic Website
                         </button>
                         <button 
                           onClick={() => setProjectType('ecommerce')}
-                          className={`p-3 border-2 border-black ${projectType === 'ecommerce' ? 'bg-[#FACC15] font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black ${projectType === 'ecommerce' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
                         >
                           E-commerce Store
                         </button>
                         <button 
                           onClick={() => setProjectType('webapp')}
-                          className={`p-3 border-2 border-black ${projectType === 'webapp' ? 'bg-[#FACC15] font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black ${projectType === 'webapp' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Web Application
                         </button>
                         <button 
                           onClick={() => setProjectType('api')}
-                          className={`p-3 border-2 border-black ${projectType === 'api' ? 'bg-[#FACC15] font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black ${projectType === 'api' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
                         >
                           API Development
                         </button>
@@ -537,23 +537,23 @@ function ServicesPage() {
                     </div>
                     
                     <div>
-                      <label className="block text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Project Scope</label>
+                      <label className="block text-lg font-semibold mb-2 text-secondary">Project Scope</label>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <button 
                           onClick={() => setProjectScope('small')}
-                          className={`p-3 border-2 border-black ${projectScope === 'small' ? 'bg-[#FACC15] font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black ${projectScope === 'small' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Small (2-5 pages/features)
                         </button>
                         <button 
                           onClick={() => setProjectScope('medium')}
-                          className={`p-3 border-2 border-black ${projectScope === 'medium' ? 'bg-[#FACC15] font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black ${projectScope === 'medium' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Medium (5-10 pages/features)
                         </button>
                         <button 
                           onClick={() => setProjectScope('large')}
-                          className={`p-3 border-2 border-black ${projectScope === 'large' ? 'bg-[#FACC15] font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black ${projectScope === 'large' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Large (10+ pages/features)
                         </button>
@@ -561,23 +561,23 @@ function ServicesPage() {
                     </div>
                     
                     <div>
-                      <label className="block text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Timeframe</label>
+                      <label className="block text-lg font-semibold mb-2 text-secondary">Timeframe</label>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <button 
                           onClick={() => setTimeframe('urgent')}
-                          className={`p-3 border-2 border-black ${timeframe === 'urgent' ? 'bg-[#FACC15] font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black ${timeframe === 'urgent' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Urgent (ASAP)
                         </button>
                         <button 
                           onClick={() => setTimeframe('standard')}
-                          className={`p-3 border-2 border-black ${timeframe === 'standard' ? 'bg-[#FACC15] font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black ${timeframe === 'standard' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Standard (1-3 months)
                         </button>
                         <button 
                           onClick={() => setTimeframe('flexible')}
-                          className={`p-3 border-2 border-black ${timeframe === 'flexible' ? 'bg-[#FACC15] font-bold' : 'bg-white hover:bg-gray-100'}`}
+                          className={`p-3 border-2 border-black ${timeframe === 'flexible' ? 'bg-accent font-bold' : 'bg-white hover:bg-gray-100'}`}
                         >
                           Flexible (3+ months)
                         </button>
@@ -586,9 +586,9 @@ function ServicesPage() {
                     
                     <div className="pt-6 border-t-2 border-black">
                       <div className="text-center">
-                        <div className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Estimated Project Cost</div>
-                        <div className="text-3xl font-bold text-[#000000]">${calculateEstimatedPrice().toLocaleString()}</div>
-                        <p className="mt-3 text-sm">This is a rough estimate. Contact us for a detailed quote.</p>
+                        <div className="text-lg font-semibold mb-2 text-secondary">Estimated Project Cost</div>
+                        <div className="text-3xl font-bold text-secondary">${calculateEstimatedPrice().toLocaleString()}</div>
+                        <p className="mt-3 text-sm text-secondary">This is a rough estimate. Contact us for a detailed quote.</p>
                       </div>
                     </div>
                   </div>
@@ -597,46 +597,46 @@ function ServicesPage() {
 
               <div className="max-w-4xl mx-auto">
                 <div className="bg-text border-2 border-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <h2 className="text-2xl font-bold mb-6 font-['Orbitron'] text-[#000000]">Our Pricing Philosophy</h2>
+                  <h2 className="text-2xl font-bold mb-6 text-secondary">Our Pricing Philosophy</h2>
                   
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Value-Based Pricing</h3>
-                      <p>We price our services based on the value they provide to your business, not just the hours we spend. This ensures that you receive a return on your investment and that our incentives are aligned with your success.</p>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary">Value-Based Pricing</h3>
+                      <p className="text-secondary">We price our services based on the value they provide to your business, not just the hours we spend. This ensures that you receive a return on your investment and that our incentives are aligned with your success.</p>
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">No Surprise Fees</h3>
-                      <p>We provide detailed quotes before beginning work and stick to them. Any additional costs will be discussed and approved before implementation. We believe in complete transparency throughout the project lifecycle.</p>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary">No Surprise Fees</h3>
+                      <p className="text-secondary">We provide detailed quotes before beginning work and stick to them. Any additional costs will be discussed and approved before implementation. We believe in complete transparency throughout the project lifecycle.</p>
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Milestone-Based Payments</h3>
-                      <p>Rather than requiring large upfront payments, we structure our billing around project milestones. This ensures you only pay for completed work and helps manage cash flow for your business.</p>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary">Milestone-Based Payments</h3>
+                      <p className="text-secondary">Rather than requiring large upfront payments, we structure our billing around project milestones. This ensures you only pay for completed work and helps manage cash flow for your business.</p>
                     </div>
                     
                     <div className="pt-6 border-t-2 border-black">
-                      <h3 className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Factors That Influence Price</h3>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary">Factors That Influence Price</h3>
                       <ul className="space-y-2">
                         <li className="flex items-start">
-                          <span className="text-[#FACC15] mr-2">•</span>
-                          <span><strong>Complexity:</strong> More complex features require more development time and expertise.</span>
+                          <span className="text-accent mr-2">•</span>
+                          <span className="text-secondary"><strong>Complexity:</strong> More complex features require more development time and expertise.</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-[#FACC15] mr-2">•</span>
-                          <span><strong>Scope:</strong> The number of pages, features, or integrations directly impacts the project size.</span>
+                          <span className="text-accent mr-2">•</span>
+                          <span className="text-secondary"><strong>Scope:</strong> The number of pages, features, or integrations directly impacts the project size.</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-[#FACC15] mr-2">•</span>
-                          <span><strong>Timeline:</strong> Expedited projects require more resources and often prioritization over other work.</span>
+                          <span className="text-accent mr-2">•</span>
+                          <span className="text-secondary"><strong>Timeline:</strong> Expedited projects require more resources and often prioritization over other work.</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-[#FACC15] mr-2">•</span>
-                          <span><strong>Integrations:</strong> Third-party systems that need to be connected add complexity.</span>
+                          <span className="text-accent mr-2">•</span>
+                          <span className="text-secondary"><strong>Integrations:</strong> Third-party systems that need to be connected add complexity.</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-[#FACC15] mr-2">•</span>
-                          <span><strong>Design Requirements:</strong> Custom designs require more time than template-based approaches.</span>
+                          <span className="text-accent mr-2">•</span>
+                          <span className="text-secondary"><strong>Design Requirements:</strong> Custom designs require more time than template-based approaches.</span>
                         </li>
                       </ul>
                     </div>
@@ -716,29 +716,29 @@ function ServicesPage() {
                     </div>
                     
                     <div className="pt-6 border-t-2 border-black">
-                      <h3 className="text-lg font-semibold mb-2 font-['Orbitron'] text-[#000000]">Typical Project Timeline</h3>
-                      <p className="mb-4">While every project is unique, here's a general timeline for a mid-sized web application:</p>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary">Typical Project Timeline</h3>
+                      <p className="mb-4 text-secondary">While every project is unique, here's a general timeline for a mid-sized web application:</p>
                       
                       <div className="bg-white border-2 border-black p-4">
                         <div className="flex items-center mb-2">
-                          <div className="w-1/4 font-medium">Weeks 1-2:</div>
-                          <div>Discovery, planning, and design concepts</div>
+                          <div className="w-1/4 font-medium text-secondary">Weeks 1-2:</div>
+                          <div className="text-secondary">Discovery, planning, and design concepts</div>
                         </div>
                         <div className="flex items-center mb-2">
-                          <div className="w-1/4 font-medium">Weeks 3-4:</div>
-                          <div>Design finalization and prototyping</div>
+                          <div className="w-1/4 font-medium text-secondary">Weeks 3-4:</div>
+                          <div className="text-secondary">Design finalization and prototyping</div>
                         </div>
                         <div className="flex items-center mb-2">
-                          <div className="w-1/4 font-medium">Weeks 5-10:</div>
-                          <div>Core development in 2-week sprints</div>
+                          <div className="w-1/4 font-medium text-secondary">Weeks 5-10:</div>
+                          <div className="text-secondary">Core development in 2-week sprints</div>
                         </div>
                         <div className="flex items-center mb-2">
-                          <div className="w-1/4 font-medium">Weeks 11-12:</div>
-                          <div>Testing, refinement, and client review</div>
+                          <div className="w-1/4 font-medium text-secondary">Weeks 11-12:</div>
+                          <div className="text-secondary">Testing, refinement, and client review</div>
                         </div>
                         <div className="flex items-center">
-                          <div className="w-1/4 font-medium">Week 13:</div>
-                          <div>Deployment and launch</div>
+                          <div className="w-1/4 font-medium text-secondary">Week 13:</div>
+                          <div className="text-secondary">Deployment and launch</div>
                         </div>
                       </div>
                     </div>
