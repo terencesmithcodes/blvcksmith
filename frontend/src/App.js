@@ -70,19 +70,19 @@ function App() {
   ]
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#FAFAFA]">
+    <div className="flex flex-col min-h-screen bg-primary">
       {/* Mobile Header - Neo-Brutalist */}
-      <div className="md:hidden bg-[#000000] text-[#FAFAFA] p-4 relative overflow-hidden border-b-4 border-[#FACC15]">
+      <div className="md:hidden bg-secondary text-text p-4 relative overflow-hidden border-b-4 border-accent">
         <div className="flex justify-between items-center relative z-10">
           <div className="flex items-center">
-            <div className="w-8 h-8 mr-2 bg-white border border-[#FACC15] rounded-sm overflow-hidden">
+            <div className="w-8 h-8 mr-2 bg-white border border-accent rounded-sm overflow-hidden">
               <img src="/images/logo.svg" alt="BS Logo" className="w-full h-full object-contain" />
             </div>
-            <h1 className="text-xl font-bold font-['Orbitron']">BlvckSmith</h1>
+            <h1 className="text-xl font-bold">BlvckSmith</h1>
           </div>
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-[#FAFAFA] focus:outline-none p-1 rounded hover:bg-[#FACC15] hover:text-black transition-colors"
+            className="text-text focus:outline-none p-1 rounded hover:bg-accent hover:text-black transition-colors"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -103,22 +103,22 @@ function App() {
               : 'opacity-0 max-h-0 overflow-hidden'
           }`}
         >
-          <div className="p-5 bg-[#E4E4E7] rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-2 border-black">
+          <div className="p-5 bg-text rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-2 border-black">
             <div className="flex flex-col items-center mb-8">
               <div className="w-full h-32 mb-4 relative animate-scale-in border-2 border-black bg-white p-2">
                 <img src="/images/logo.svg" alt="BlvckSmith Logo" className="w-full h-full object-contain" />
               </div>
               <div className="text-center">
-                <h2 className="text-xl font-bold animate-fade-in text-[#000000] font-['Orbitron'] mb-2">BlvckSmith</h2>
-                <p className="text-sm animate-fade-in font-['Orbitron']" style={{ animationDelay: '200ms' }}>
-                  <span className="bg-[#FACC15] px-2 py-1 border-2 border-black text-black">WEB</span> <span className="bg-black text-white px-2 py-1 border-2 border-black">DEV</span>
+                <h2 className="text-xl font-bold animate-fade-in text-secondary mb-2">BlvckSmith</h2>
+                <p className="text-sm animate-fade-in" style={{ animationDelay: '200ms' }}>
+                  <span className="bg-accent px-2 py-1 border-2 border-black text-black">WEB</span> <span className="bg-secondary text-text px-2 py-1 border-2 border-black">DEV</span>
                 </p>
               </div>
             </div>
             
             <div className="border-t-2 border-black pt-4 mb-4"></div>
             
-            <div className="text-sm text-[#000000] mb-6 animate-fade-in font-medium" style={{ animationDelay: '400ms' }}>
+            <div className="text-sm text-secondary mb-6 animate-fade-in font-medium" style={{ animationDelay: '400ms' }}>
               We create custom web solutions that help businesses grow and thrive in the digital world.
             </div>
             
@@ -136,10 +136,10 @@ function App() {
                   aria-label={social.label}
                   className="flex flex-col items-center"
                 >
-                  <svg className="w-6 h-6 text-[#000000] hover:text-[#FACC15] transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-secondary hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
                     <path d={social.icon} />
                   </svg>
-                  <span className="text-xs mt-1 text-[#000000] font-medium">{social.label}</span>
+                  <span className="text-xs mt-1 text-secondary font-medium">{social.label}</span>
                 </a>
               ))}
             </div>
@@ -150,15 +150,15 @@ function App() {
       <div className="flex flex-col md:flex-row flex-grow">
         {/* Left Info Card - Hidden on mobile, centered vertically */}
         <aside className="hidden md:block md:w-1/5 lg:w-1/6 p-4 flex items-center justify-center">
-          <div className="bg-[#E4E4E7] rounded-none border-2 border-black p-6 sticky top-8 overflow-hidden relative mx-auto shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+          <div className="bg-text rounded-none border-2 border-black p-6 sticky top-8 overflow-hidden relative mx-auto shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
             <div className="flex flex-col items-center relative">
               <div className="w-full h-48 mb-8 relative z-10 animate-scale-in">
                 <img src="/images/logo.svg" alt="BlvckSmith Logo" className="w-full h-full object-contain" />
               </div>
               
-              <h1 className="text-2xl font-bold mb-3 text-[#000000] animate-fade-in font-['Orbitron']" style={{ animationDelay: '300ms' }}>BlvckSmith</h1>
-              <p className="text-sm text-[#000000] text-center mb-4 animate-fade-in font-medium font-['Orbitron']" style={{ animationDelay: '400ms' }}>
-                <span className="bg-[#FACC15] px-2 py-1 border-2 border-black">WEB</span> <span className="bg-black text-white px-2 py-1 border-2 border-black">DEV</span>
+              <h1 className="text-2xl font-bold mb-3 text-secondary animate-fade-in" style={{ animationDelay: '300ms' }}>BlvckSmith</h1>
+              <p className="text-sm text-secondary text-center mb-4 animate-fade-in font-medium" style={{ animationDelay: '400ms' }}>
+                <span className="bg-accent px-2 py-1 border-2 border-black">WEB</span> <span className="bg-secondary text-text px-2 py-1 border-2 border-black">DEV</span>
               </p>
               
               <div className="w-full border-t-2 border-black pt-4 mb-2"></div>
@@ -189,7 +189,7 @@ function App() {
                     aria-label={social.label}
                     className="transform transition-all hover:scale-125 hover:rotate-6"
                   >
-                    <svg className="w-5 h-5 text-[#000000] hover:text-[#FACC15] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-secondary hover:text-accent transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
                       <path d={social.path} />
                     </svg>
                   </a>
@@ -203,7 +203,7 @@ function App() {
         <main className="flex-grow min-h-screen flex flex-col">
           <div className="flex-grow">
           {/* Hero Section - Neo-Brutalist with Background Video */}
-          <section className="text-[#000000] py-20 md:py-32 px-4 md:px-12 relative min-h-[600px] flex items-center overflow-hidden">
+          <section className="text-text py-20 md:py-32 px-4 md:px-12 relative min-h-[600px] flex items-center overflow-hidden">
             {/* Background Video */}
             <BackgroundVideo videoSrc="/videos/background.mp4" />
             
@@ -214,17 +214,17 @@ function App() {
                 {/* Handled by the mobile menu */}
               </div>
 
-              <div className="bg-white/70 p-6 border-4 border-black inline-block shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                <h1 className="text-5xl md:text-6xl font-bold mb-8 animate-fade-in leading-tight tracking-tight">
-                  Forge Your <span className="text-[#EF4444] bg-[#FACC15] px-2 border-2 border-black">Digital</span> Presence
+              <div className="bg-text/90 p-6 border-4 border-black inline-block shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <h1 className="text-5xl md:text-6xl font-bold mb-8 animate-fade-in leading-tight tracking-tight text-secondary">
+                  Forge Your <span className="text-white bg-accent-2 px-2 border-2 border-black">Digital</span> Presence
                 </h1>
-                <p className="text-xl text-[#000000] mb-10 animate-fade-in max-w-2xl font-bold" style={{ animationDelay: '200ms' }}>
+                <p className="text-xl text-secondary mb-10 animate-fade-in max-w-2xl font-bold" style={{ animationDelay: '200ms' }}>
                   Expert web development and technical consulting to help your business thrive in the digital world.
                 </p>
                 <div className="flex justify-start">
                   <button 
                     onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                    className="bg-black text-white hover:bg-[#FACC15] hover:text-black border-4 border-black px-10 py-4 font-bold animate-fade-in text-lg shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:shadow-none transition-all"
+                    className="bg-secondary text-text hover:bg-accent hover:text-black border-4 border-black px-10 py-4 font-bold animate-fade-in text-lg shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:shadow-none transition-all"
                     style={{ animationDelay: '400ms' }}
                   >
                     GET STARTED
@@ -235,10 +235,10 @@ function App() {
           </section>
 
           {/* Services Section - Neo-Brutalist */}
-          <section className="py-16 px-4 md:px-12 bg-[#FAFAFA]">
+          <section className="py-16 px-4 md:px-12 bg-primary">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-2 animate-fade-in text-[#000000]">Our Services</h2>
-              <p className="text-[#000000] mb-10 animate-fade-in font-medium" style={{ animationDelay: '200ms' }}>
+              <h2 className="text-3xl font-bold mb-2 animate-fade-in text-text">Our Services</h2>
+              <p className="text-text mb-10 animate-fade-in font-medium" style={{ animationDelay: '200ms' }}>
                 We provide a range of web development services to help businesses succeed online
               </p>
               
@@ -260,10 +260,10 @@ function App() {
           </section>
 
           {/* Technologies Section - Neo-Brutalist */}
-          <section className="py-16 px-4 md:px-12 bg-[#000000]">
+          <section className="py-16 px-4 md:px-12 bg-secondary">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-2 animate-fade-in text-[#FAFAFA]">Technologies</h2>
-              <p className="text-[#E4E4E7] mb-10 animate-fade-in font-medium" style={{ animationDelay: '200ms' }}>
+              <h2 className="text-3xl font-bold mb-2 animate-fade-in text-text">Technologies</h2>
+              <p className="text-text mb-10 animate-fade-in font-medium" style={{ animationDelay: '200ms' }}>
                 We work with the latest technologies to build modern, scalable web solutions
               </p>
               
@@ -271,7 +271,7 @@ function App() {
                 {technologies.map((tech, index) => (
                   <div 
                     key={index} 
-                    className="skill-item bg-[#E4E4E7] p-4 text-center text-black border-2 border-black shadow-[4px_4px_0px_0px_rgba(250,204,21,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+                    className="skill-item bg-text p-4 text-center text-secondary border-2 border-black shadow-[4px_4px_0px_0px_rgba(16,185,129,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
                     style={{ 
                       animationName: 'scaleIn',
                       animationDuration: '0.5s',
@@ -287,14 +287,14 @@ function App() {
           </section>
 
           {/* Contact Section - Neo-Brutalist */}
-          <section id="contact" className="py-16 px-4 md:px-12 bg-[#FAFAFA]">
+          <section id="contact" className="py-16 px-4 md:px-12 bg-primary">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-2 animate-fade-in text-[#000000]">Contact Us</h2>
-              <p className="text-[#000000] mb-10 animate-fade-in font-medium" style={{ animationDelay: '200ms' }}>
+              <h2 className="text-3xl font-bold mb-2 animate-fade-in text-text">Contact Us</h2>
+              <p className="text-text mb-10 animate-fade-in font-medium" style={{ animationDelay: '200ms' }}>
                 Ready to start your project? Reach out to discuss how we can help.
               </p>
               
-              <div className="bg-[#E4E4E7] border-2 border-black p-8 animate-scale-in shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]" style={{ animationDelay: '200ms', opacity: 0 }}>
+              <div className="bg-text border-2 border-black p-8 animate-scale-in shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]" style={{ animationDelay: '200ms', opacity: 0 }}>
                 <div className="animate-fade-in" style={{ animationDelay: '400ms', opacity: 0 }}>
                   <ContactForm />
                 </div>
