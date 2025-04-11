@@ -825,7 +825,7 @@ function ServicesPage() {
                     </div>
                   </div>
                   
-                  <a href="/resources/project-planner.html?source=planner" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(16,185,129,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
+                  <a href="/resources/project-planner.html?source=planner&t=1713229000" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(16,185,129,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
                     View Document
                   </a>
                 </div>
@@ -862,7 +862,7 @@ function ServicesPage() {
                     </div>
                   </div>
                   
-                  <a href="/resources/budget-guide.html?source=budget" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(16,185,129,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
+                  <a href="/resources/budget-guide.html?source=budget&t=1713229000" className="inline-flex justify-center border-2 border-black bg-black py-2 px-6 text-md font-bold text-white shadow-[5px_5px_0px_0px_rgba(16,185,129,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all focus-visible:outline-none">
                     View Document
                   </a>
                 </div>
@@ -873,22 +873,22 @@ function ServicesPage() {
                     <div>
                       <h3 className="font-semibold mb-2 text-secondary">Understanding Web Development Contracts</h3>
                       <p className="text-sm mb-3 text-secondary">Learn about the key elements of a web development contract and what to look for before signing.</p>
-                      <a href="/resources/web-development-contracts.html?source=contracts" target="_blank" rel="noopener noreferrer" className="text-secondary font-medium underline hover:text-accent">Read Article →</a>
+                      <a href="/resources/web-development-contracts.html?source=contracts&t=1713229000" target="_blank" rel="noopener noreferrer" className="text-secondary font-medium underline hover:text-accent">Read Article →</a>
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2 text-secondary">5 Questions to Ask Before Hiring a Developer</h3>
                       <p className="text-sm mb-3 text-secondary">Important questions that will help you identify the right development partner for your project.</p>
-                      <a href="/resources/hiring-developer-questions.html?source=hiring" target="_blank" rel="noopener noreferrer" className="text-secondary font-medium underline hover:text-accent">Read Article →</a>
+                      <a href="/resources/hiring-developer-questions.html?source=hiring&t=1713229000" target="_blank" rel="noopener noreferrer" className="text-secondary font-medium underline hover:text-accent">Read Article →</a>
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2 text-secondary">Preparing Content for Your Website</h3>
                       <p className="text-sm mb-3 text-secondary">A guide to gathering and organizing content that will make your development process smoother.</p>
-                      <a href="/resources/preparing-website-content.html?source=content" target="_blank" rel="noopener noreferrer" className="text-secondary font-medium underline hover:text-accent">Read Article →</a>
+                      <a href="/resources/preparing-website-content.html?source=content&t=1713229000" target="_blank" rel="noopener noreferrer" className="text-secondary font-medium underline hover:text-accent">Read Article →</a>
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2 text-secondary">Web Security Essentials for Business Owners</h3>
                       <p className="text-sm mb-3 text-secondary">What you need to know about keeping your website secure and your customer data protected.</p>
-                      <a href="/resources/web-security-essentials.html?source=security" target="_blank" rel="noopener noreferrer" className="text-secondary font-medium underline hover:text-accent">Read Article →</a>
+                      <a href="/resources/web-security-essentials.html?source=security&t=1713229000" target="_blank" rel="noopener noreferrer" className="text-secondary font-medium underline hover:text-accent">Read Article →</a>
                     </div>
                   </div>
                 </div>
