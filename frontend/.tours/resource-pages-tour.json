@@ -1,0 +1,86 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Resource Pages Deep Dive",
+  "steps": [
+    {
+      "title": "Introduction to Resource Pages",
+      "description": "# Resource Pages Deep Dive\n\nThis tour focuses specifically on the interactive resource pages that are available from the Services page. These resources are HTML documents with JavaScript functionality that provide valuable tools and information for clients.\n\nIn this tour, we'll explore:\n\n1. How resource pages are structured\n2. The interactive features of each resource\n3. The navigation system between resources and the main site\n4. How the data persistence works in the Project Planner\n\nLet's start by looking at how users access these resources."
+    },
+    {
+      "file": "src/pages/ServicesPage.js",
+      "line": 678,
+      "title": "Resources Tab in Services Page",
+      "description": "# Resources Tab\n\nThe Resources tab in the Services page is the entry point to all client resources. This section includes:\n\n1. Cards for main documents (Project Planner, Budget Guide)\n2. A section of helpful articles on various web development topics\n\nEach resource link is configured to open in a consistent way using the target=\"resourceFrame\" attribute. This provides a better user experience when navigating between resources."
+    },
+    {
+      "file": "public/resources/project-planner.html",
+      "line": 1,
+      "title": "Project Planner Overview",
+      "description": "# Project Planner Document\n\nThe Project Planner is a comprehensive interactive form that helps clients organize their project requirements. It includes sections for:\n\n1. Project overview information\n2. Business goals worksheet\n3. Feature prioritization template\n4. Technical requirements definition\n5. Content collection checklist\n6. Timeline and budget planning\n7. Competitor analysis\n\nThis document follows the site's neo-brutalist design language while providing practical functionality."
+    },
+    {
+      "file": "public/resources/project-planner.html",
+      "line": 168,
+      "title": "Print Styling",
+      "description": "# Print Styling\n\nThe document includes special CSS for printing, which:\n\n1. Hides elements not needed in print (header, buttons)\n2. Adjusts formatting for better printed output\n3. Controls page breaks to prevent awkward splits\n4. Modifies typography for print legibility\n\nThis allows users to print a clean, professional-looking document for offline use."
+    },
+    {
+      "file": "public/resources/project-planner.html",
+      "line": 457,
+      "title": "Action Buttons",
+      "description": "# Action Buttons\n\nAt the bottom of the form are several action buttons that provide functionality:\n\n1. Print Form: Prints the completed form\n2. Save Form Data: Saves the form to localStorage\n3. Load Saved Form: Retrieves saved form data\n4. Clear Form: Resets the form\n5. Email Form: Formats the form data and creates a mailto link\n\nThese actions make the form a truly interactive tool rather than just a static document."
+    },
+    {
+      "file": "public/resources/project-planner.html",
+      "line": 472,
+      "title": "JavaScript Functionality",
+      "description": "# JavaScript Functionality\n\nThe document includes several JavaScript functions:\n\n1. `goBackToResources()`: Handles navigation back to the Services page\n2. `saveFormData()`: Collects form data and saves it to localStorage\n3. `loadFormData()`: Retrieves saved form data from localStorage\n4. `clearForm()`: Resets all form fields\n5. `emailForm()`: Formats form data for email and opens a mailto link\n\nThese functions make the document interactive without requiring a full React application."
+    },
+    {
+      "file": "public/resources/project-planner.html",
+      "line": 532,
+      "title": "Email Functionality",
+      "description": "# Email Functionality\n\nThe `emailForm()` function:\n\n1. Collects all form data from input fields\n2. Formats it into a structured email body\n3. Creates sections for Project Overview, Business Goals, Features, etc.\n4. Encodes the content for use in a mailto link\n5. Opens the user's email client with pre-populated content\n\nThis allows clients to easily share their completed project plan with the company or colleagues."
+    },
+    {
+      "file": "public/resources/budget-guide.html",
+      "line": 1,
+      "title": "Budget Guide Document",
+      "description": "# Budget Guide Document\n\nThe Budget Guide is an educational resource that helps clients understand web development costs. It includes:\n\n1. An overview of factors that influence web development pricing\n2. Detailed breakdowns of costs by project type\n3. ROI calculation guidelines\n4. Tips for managing web development budgets\n5. Maintenance and ongoing cost considerations\n\nLike all resource documents, it maintains the site's design language and includes navigation back to the main site."
+    },
+    {
+      "file": "public/resources/web-development-contracts.html",
+      "line": 1,
+      "title": "Web Development Contracts Article",
+      "description": "# Web Development Contracts Article\n\nThis article provides educational content about web development contracts. It covers:\n\n1. Key elements that should be in a web development contract\n2. Red flags to watch for in contracts\n3. How to protect intellectual property\n4. Payment terms and milestone structures\n5. Maintenance and support agreements\n\nThis is one of several informational articles that provide valuable guidance to clients."
+    },
+    {
+      "file": "public/resources/hiring-developer-questions.html",
+      "line": 1,
+      "title": "Hiring Developer Questions Article",
+      "description": "# Hiring Developer Questions Article\n\nThis resource provides a guide to questioning potential web developers or agencies. It includes:\n\n1. Questions about experience and portfolio\n2. Technical capability assessment questions\n3. Project management approach questions\n4. Communication style questions\n5. Support and maintenance questions\n\nThis helps clients make informed decisions when selecting a development partner."
+    },
+    {
+      "file": "public/resources/preparing-website-content.html",
+      "line": 1,
+      "title": "Website Content Preparation Guide",
+      "description": "# Website Content Preparation Guide\n\nThis guide helps clients prepare content for their website project. It covers:\n\n1. Content inventory and auditing\n2. Website structure planning\n3. Writing effective web copy\n4. Image and media preparation guidelines\n5. SEO considerations for content\n\nProper content preparation is crucial for web project success, making this an important resource."
+    },
+    {
+      "file": "public/resources/web-security-essentials.html",
+      "line": 1,
+      "title": "Web Security Essentials Guide",
+      "description": "# Web Security Essentials Guide\n\nThis guide educates clients about website security considerations. It covers:\n\n1. Common website vulnerabilities\n2. Security best practices\n3. SSL/TLS certificates\n4. User authentication and data protection\n5. Regular security maintenance\n\nSecurity is a critical aspect of web development that clients should understand."
+    },
+    {
+      "file": "public/resources/budget-guide.html",
+      "line": 383,
+      "title": "Navigation Function",
+      "description": "# Navigation Function\n\nAll resource documents include a consistent navigation function that ensures users can return to the main site:\n\n```javascript\nfunction goBackToResources() {\n    // Try to navigate to parent window if in iframe\n    if (window.parent && window.parent !== window) {\n        window.parent.location.href = '/services';\n        return;\n    }\n    \n    // Otherwise try to use history or direct navigation\n    if (document.referrer.includes('/services')) {\n        window.history.back();\n    } else {\n        window.location.href = '/services';\n    }\n}\n```\n\nThis function handles different scenarios to ensure reliable navigation back to the Services page."
+    },
+    {
+      "title": "Conclusion",
+      "description": "# Resource Pages Conclusion\n\nThe resource pages represent an important part of the BlvckSmith website's value proposition:\n\n1. They provide practical tools and educational content for clients\n2. They showcase the company's expertise and approach\n3. They help streamline the client onboarding and project planning process\n\nKey technical aspects include:\n\n- Vanilla HTML/CSS/JavaScript for lightweight, standalone functionality\n- LocalStorage for client-side data persistence\n- Print styling for offline use\n- Email integration for sharing completed forms\n- Consistent navigation back to the main site\n\nThese resources enhance the overall user experience and provide tangible value to potential clients beyond just marketing information."
+    }
+  ]
+}

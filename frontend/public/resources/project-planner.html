@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <!-- Force cache refresh -->
+    <title>BlvckSmith Project Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resource-styles.css">
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1F2937; /* Secondary color (charcoal) for text */
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #111827; /* Primary color (rich black) */
+            color: #E5E7EB; /* Text color (light gray) */
+            padding: 20px;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #10B981; /* Accent color (vibrant emerald) */
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 24px;
+            margin-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #10B981; /* Accent color */
+            color: #111827; /* Primary color */
+        }
+        h3 {
+            font-size: 20px;
+            margin-top: 25px;
+            color: #1F2937; /* Secondary color */
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .form-field {
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        .form-field h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+        .form-field p {
+            margin-bottom: 10px;
+            font-style: italic;
+            color: #1F2937;
+        }
+        .checklist {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .checklist li {
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+            border-left: 3px solid #10B981;
+            display: flex;
+            align-items: center;
+        }
+        .checklist li input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: #10B981; /* Accent color (vibrant emerald) */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #111827;
+        }
+        footer {
+            background-color: #1F2937;
+            color: #E5E7EB;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 4px solid #10B981;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #1F2937;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #111827;
+            padding: 8px 16px;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            background-color: #10B981;
+            color: #000000;
+            box-shadow: none;
+            transform: translate(2px, 2px);
+        }
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 14px;
+        }
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1F2937;
+            color: #E5E7EB;
+            border: 2px solid #000000;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+            box-shadow: 4px 4px 0px 0px rgba(16,185,129,1);
+        }
+        .btn:hover {
+            box-shadow: none;
+            transform: translate(2px, 2px);
+        }
+        a {
+            color: #10B981; /* Accent color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        input[type="radio"] {
+            accent-color: #10B981; /* Accent color (vibrant emerald) */
+            margin-right: 5px;
+        }
+        @media print {
+            header, .btn-container, .back-link {
+                display: none;
+            }
+            body {
+                font-size: 12pt;
+            }
+            .container {
+                width: 100%;
+                max-width: none;
+                padding: 0;
+                margin: 0;
+            }
+            .form-field, .checklist li {
+                page-break-inside: avoid;
+            }
+            h2 {
+                page-break-after: avoid;
+            }
+            h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // Style checkboxes
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.style.accentColor = '#10B981'; // Accent color (vibrant emerald)
+            });
+            
+            // Style radio buttons
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.style.accentColor = '#10B981'; // Accent color (vibrant emerald)
+            });
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>BlvckSmith Web Project Planner</h1>
+            <p>A comprehensive guide to help you organize your web project requirements</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <a href="/#/services" class="back-link">← Back to Services</a>
+        
+        <form id="projectPlannerForm">
+            <section class="section">
+                <h2>Project Overview</h2>
+                <p>This document will help you outline your project requirements, objectives, and expectations. The more thorough you are in this planning stage, the more efficiently we can build your project.</p>
+
+                <div class="form-field">
+                    <h4>Project Name:</h4>
+                    <p>What do you call this project internally?</p>
+                    <input type="text" name="projectName">
+                </div>
+
+                <div class="form-field">
+                    <h4>Project Description:</h4>
+                    <p>Provide a brief overview of what this project is about.</p>
+                    <textarea name="projectDescription"></textarea>
+                </div>
+
+                <div class="form-field">
+                    <h4>Primary Contact Person:</h4>
+                    <p>Who is the main point of contact for this project?</p>
+                    <input type="text" name="primaryContact">
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Business Goals Worksheet</h2>
+                <p>Understanding your business objectives helps us align the project with your overall strategy.</p>
+
+                <h3>Primary Business Goals</h3>
+                <p>What are the top 3 business goals you want to achieve with this project?</p>
+                
+                <div class="form-field">
+                    <h4>Goal 1:</h4>
+                    <input type="text" name="goal1">
+                </div>
+                
+                <div class="form-field">
+                    <h4>Goal 2:</h4>
+                    <input type="text" name="goal2">
+                </div>
+                
+                <div class="form-field">
+                    <h4>Goal 3:</h4>
+                    <input type="text" name="goal3">
+                </div>
+
+                <h3>Success Metrics</h3>
+                <p>How will you measure the success of this project?</p>
+                
+                <div class="form-field">
+                    <h4>Key Performance Indicators (KPIs):</h4>
+                    <p>Examples: conversion rate, engagement, sales, etc.</p>
+                    <textarea name="kpis"></textarea>
+                </div>
+                
+                <div class="form-field">
+                    <h4>Target Audience:</h4>
+                    <p>Who are the primary users of your website/application?</p>
+                    <textarea name="targetAudience"></textarea>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Feature Prioritization Template</h2>
+                <p>List and prioritize the features you want to include in your project.</p>
+
+                <table>
+                    <tr>
+                        <th>Feature/Function</th>
+                        <th>Priority</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="feature1"></td>
+                        <td>
+                            <select name="priority1">
+                                <option value="">Select Priority</option>
+                                <option value="must-have">Must-Have</option>
+                                <option value="should-have">Should-Have</option>
+                                <option value="nice-to-have">Nice-to-Have</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="featureNotes1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="feature2"></td>
+                        <td>
+                            <select name="priority2">
+                                <option value="">Select Priority</option>
+                                <option value="must-have">Must-Have</option>
+                                <option value="should-have">Should-Have</option>
+                                <option value="nice-to-have">Nice-to-Have</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="featureNotes2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="feature3"></td>
+                        <td>
+                            <select name="priority3">
+                                <option value="">Select Priority</option>
+                                <option value="must-have">Must-Have</option>
+                                <option value="should-have">Should-Have</option>
+                                <option value="nice-to-have">Nice-to-Have</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="featureNotes3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="feature4"></td>
+                        <td>
+                            <select name="priority4">
+                                <option value="">Select Priority</option>
+                                <option value="must-have">Must-Have</option>
+                                <option value="should-have">Should-Have</option>
+                                <option value="nice-to-have">Nice-to-Have</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="featureNotes4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="feature5"></td>
+                        <td>
+                            <select name="priority5">
+                                <option value="">Select Priority</option>
+                                <option value="must-have">Must-Have</option>
+                                <option value="should-have">Should-Have</option>
+                                <option value="nice-to-have">Nice-to-Have</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="featureNotes5"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="feature6"></td>
+                        <td>
+                            <select name="priority6">
+                                <option value="">Select Priority</option>
+                                <option value="must-have">Must-Have</option>
+                                <option value="should-have">Should-Have</option>
+                                <option value="nice-to-have">Nice-to-Have</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="featureNotes6"></td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="section">
+                <h2>Technical Requirements</h2>
+                
+                <div class="form-field">
+                    <h4>Hosting Environment:</h4>
+                    <p>Do you have a preferred hosting provider? Any specific requirements?</p>
+                    <textarea name="hostingEnvironment"></textarea>
+                </div>
+                
+                <div class="form-field">
+                    <h4>Integrations:</h4>
+                    <p>List any third-party systems your website should integrate with (CRM, email marketing, payment processors, etc.)</p>
+                    <textarea name="integrations"></textarea>
+                </div>
+                
+                <div class="form-field">
+                    <h4>Technical Constraints:</h4>
+                    <p>Are there any technical limitations or requirements we should be aware of?</p>
+                    <textarea name="technicalConstraints"></textarea>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Content Collection Checklist</h2>
+                <p>Use this checklist to track the content you'll need to gather for your project.</p>
+
+                <h3>Text Content</h3>
+                <ul class="checklist">
+                    <li><input type="checkbox" name="content_homepage"> Homepage content</li>
+                    <li><input type="checkbox" name="content_about"> About page content</li>
+                    <li><input type="checkbox" name="content_services"> Services/Products descriptions</li>
+                    <li><input type="checkbox" name="content_contact"> Contact information</li>
+                    <li><input type="checkbox" name="content_legal"> Legal pages (Privacy Policy, Terms of Service)</li>
+                    <li><input type="checkbox" name="content_blog"> Blog posts/articles (if applicable)</li>
+                </ul>
+
+                <h3>Visual Content</h3>
+                <ul class="checklist">
+                    <li><input type="checkbox" name="content_logo"> Logo (vector format preferred)</li>
+                    <li><input type="checkbox" name="content_styleguide"> Brand style guide (if available)</li>
+                    <li><input type="checkbox" name="content_photos"> Professional photos</li>
+                    <li><input type="checkbox" name="content_products"> Product images</li>
+                    <li><input type="checkbox" name="content_team"> Team photos</li>
+                    <li><input type="checkbox" name="content_icons"> Icons and graphics</li>
+                </ul>
+
+                <h3>Media Content</h3>
+                <ul class="checklist">
+                    <li><input type="checkbox" name="content_videos"> Videos</li>
+                    <li><input type="checkbox" name="content_audio"> Audio files</li>
+                    <li><input type="checkbox" name="content_downloads"> Downloadable resources</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Timeline & Budget</h2>
+                
+                <div class="form-field">
+                    <h4>Project Deadline:</h4>
+                    <p>When do you need this project completed by? Is there a specific launch date?</p>
+                    <input type="text" name="projectDeadline">
+                </div>
+                
+                <div class="form-field">
+                    <h4>Budget Range:</h4>
+                    <p>What is your budget range for this project?</p>
+                    <select name="budgetRange">
+                        <option value="">Select Budget Range</option>
+                        <option value="under5k">Under $5,000</option>
+                        <option value="5k-10k">$5,000 - $10,000</option>
+                        <option value="10k-25k">$10,000 - $25,000</option>
+                        <option value="25k-50k">$25,000 - $50,000</option>
+                        <option value="50k+">$50,000+</option>
+                    </select>
+                </div>
+                
+                <div class="form-field">
+                    <h4>Phased Approach:</h4>
+                    <p>Would you consider a phased approach if budget constraints exist?</p>
+                    <div>
+                        <input type="radio" id="phased_yes" name="phasedApproach" value="yes">
+                        <label for="phased_yes">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="phased_no" name="phasedApproach" value="no">
+                        <label for="phased_no">No</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="phased_maybe" name="phasedApproach" value="maybe">
+                        <label for="phased_maybe">Maybe (would need discussion)</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Competitor Analysis</h2>
+                <p>List 3-5 competitor websites or similar sites that you like or that have features you'd like to incorporate.</p>
+                
+                <div class="form-field">
+                    <h4>Website 1:</h4>
+                    <p>URL and what you like about it</p>
+                    <input type="text" name="competitorUrl1" placeholder="Website URL">
+                    <textarea name="competitorNotes1" placeholder="What you like about this site"></textarea>
+                </div>
+                
+                <div class="form-field">
+                    <h4>Website 2:</h4>
+                    <p>URL and what you like about it</p>
+                    <input type="text" name="competitorUrl2" placeholder="Website URL">
+                    <textarea name="competitorNotes2" placeholder="What you like about this site"></textarea>
+                </div>
+                
+                <div class="form-field">
+                    <h4>Website 3:</h4>
+                    <p>URL and what you like about it</p>
+                    <input type="text" name="competitorUrl3" placeholder="Website URL">
+                    <textarea name="competitorNotes3" placeholder="What you like about this site"></textarea>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Additional Notes</h2>
+                <p>Is there anything else you'd like to share about your project?</p>
+                
+                <div class="form-field">
+                    <textarea name="additionalNotes" style="min-height: 150px;"></textarea>
+                </div>
+            </section>
+
+            <div class="btn-container">
+                <button type="button" class="btn" onclick="window.print()">Print Form</button>
+                <button type="button" class="btn" onclick="saveFormData()">Save Form Data</button>
+                <button type="button" class="btn" onclick="loadFormData()">Load Saved Form</button>
+                <button type="button" class="btn" onclick="clearForm()">Clear Form</button>
+                <button type="button" class="btn" onclick="emailForm()">Email Form</button>
+            </div>
+        </form>
+
+        <footer>
+            <p>© 2025 BlvckSmith. This document is provided to help plan your web development project.</p>
+            <p>Contact us: info@blvcksmith.com | (404) 860-5633</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add custom styling to alert and confirm dialogs
+        // Note: Native alerts can't be styled directly, but we're keeping this JavaScript functionality
+        function saveFormData() {
+            const form = document.getElementById('projectPlannerForm');
+            const formData = {};
+            
+            // Collect all input values
+            const inputs = form.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                if (input.type === 'checkbox') {
+                    formData[input.name] = input.checked;
+                } else if (input.type === 'radio') {
+                    if (input.checked) {
+                        formData[input.name] = input.value;
+                    }
+                } else {
+                    formData[input.name] = input.value;
+                }
+            });
+            
+            // Save to localStorage
+            localStorage.setItem('blvcksmithProjectPlanner', JSON.stringify(formData));
+            
+            alert('Your form data has been saved to your browser. You can load it later using the "Load Saved Form" button.');
+        }
+        
+        function loadFormData() {
+            const savedData = localStorage.getItem('blvcksmithProjectPlanner');
+            
+            if (!savedData) {
+                alert('No saved form data found.');
+                return;
+            }
+            
+            const formData = JSON.parse(savedData);
+            const form = document.getElementById('projectPlannerForm');
+            
+            // Set values for all inputs
+            Object.keys(formData).forEach(key => {
+                const elements = form.querySelectorAll(`[name="${key}"]`);
+                
+                elements.forEach(element => {
+                    if (element.type === 'checkbox') {
+                        element.checked = formData[key];
+                    } else if (element.type === 'radio') {
+                        element.checked = (element.value === formData[key]);
+                    } else {
+                        element.value = formData[key];
+                    }
+                });
+            });
+            
+            alert('Form data loaded successfully.');
+        }
+        
+        function clearForm() {
+            if (confirm('Are you sure you want to clear all form data?')) {
+                document.getElementById('projectPlannerForm').reset();
+            }
+        }
+        
+        function emailForm() {
+            const form = document.getElementById('projectPlannerForm');
+            const formData = {};
+            
+            // Collect all input values
+            const inputs = form.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                if (input.type === 'checkbox') {
+                    if (input.checked) {
+                        formData[input.name] = 'Yes';
+                    } else {
+                        formData[input.name] = 'No';
+                    }
+                } else if (input.type === 'radio') {
+                    if (input.checked) {
+                        formData[input.name] = input.value;
+                    }
+                } else {
+                    formData[input.name] = input.value || 'Not provided';
+                }
+            });
+            
+            // Create email body with form data
+            let emailBody = 'Project Planner Form Data:\n\n';
+            
+            // Add Project Overview section
+            emailBody += 'PROJECT OVERVIEW\n';
+            emailBody += '================\n';
+            emailBody += `Project Name: ${formData.projectName || 'Not provided'}\n`;
+            emailBody += `Project Description: ${formData.projectDescription || 'Not provided'}\n`;
+            emailBody += `Primary Contact: ${formData.primaryContact || 'Not provided'}\n\n`;
+            
+            // Add Business Goals section
+            emailBody += 'BUSINESS GOALS\n';
+            emailBody += '================\n';
+            emailBody += `Goal 1: ${formData.goal1 || 'Not provided'}\n`;
+            emailBody += `Goal 2: ${formData.goal2 || 'Not provided'}\n`;
+            emailBody += `Goal 3: ${formData.goal3 || 'Not provided'}\n`;
+            emailBody += `KPIs: ${formData.kpis || 'Not provided'}\n`;
+            emailBody += `Target Audience: ${formData.targetAudience || 'Not provided'}\n\n`;
+            
+            // Add Features section
+            emailBody += 'FEATURES\n';
+            emailBody += '================\n';
+            for (let i = 1; i <= 6; i++) {
+                if (formData[`feature${i}`]) {
+                    emailBody += `Feature ${i}: ${formData[`feature${i}`]} (${formData[`priority${i}`] || 'No priority set'})\n`;
+                    emailBody += `Notes: ${formData[`featureNotes${i}`] || 'None'}\n\n`;
+                }
+            }
+            
+            // Encode email body for mailto link
+            const encodedBody = encodeURIComponent(emailBody);
+            
+            // Create and open mailto link
+            const mailtoLink = `mailto:info@blvcksmith.com?subject=Project Planner for ${formData.projectName || 'New Project'}&body=${encodedBody}`;
+            window.location.href = mailtoLink;
+        }
+
+        // Apply the monochromatic color scheme to radio buttons and checkboxes on load
+        window.onload = function() {
+            // Style checkboxes
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.style.accentColor = '#10B981'; // Accent color (vibrant emerald)
+            });
+            
+            // Style radio buttons
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.style.accentColor = '#10B981'; // Accent color (vibrant emerald)
+            });
+        };
+    </script>
+</body>
+</html>

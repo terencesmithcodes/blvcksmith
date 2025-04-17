@@ -1,0 +1,80 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Neo-Brutalist Design System",
+  "steps": [
+    {
+      "title": "Introduction to Design System",
+      "description": "# Neo-Brutalist Design System Tour\n\nThis tour explores the neo-brutalist design system implemented across the BlvckSmith website. Neo-brutalism is characterized by bold typography, high contrast, sharp edges, and an unapologetic approach to design.\n\nIn this tour, we'll examine:\n\n1. The color palette and typography choices\n2. UI component design patterns\n3. Animation and interaction design\n4. Responsive design implementation\n5. Consistency across different site sections\n\nLet's begin by looking at the core design elements."
+    },
+    {
+      "file": "tailwind.config.js",
+      "line": 1,
+      "title": "Color Palette Configuration",
+      "description": "# Color Palette\n\nThe site uses a limited but high-impact color palette that's characteristic of neo-brutalist design:\n\n- **Black (#000000)**: Used for strong borders, backgrounds, and primary text\n- **White/Off-white (#FAFAFA)**: Used for backgrounds and contrast text\n- **Yellow (#FACC15)**: Used as an accent color for highlights and important elements\n- **Gray (#E4E4E7)**: Used for cards and secondary backgrounds\n- **Red (#EF4444)**: Used sparingly for extra emphasis\n\nThese colors are configured in the Tailwind configuration file and used consistently throughout the site."
+    },
+    {
+      "file": "src/index.css",
+      "line": 1,
+      "title": "Typography and Global Styles",
+      "description": "# Typography and Global Styles\n\nThe typography follows neo-brutalist principles with:\n\n- **Bold, high-contrast text**: Especially for headings\n- **Clean sans-serif fonts**: For readability and modern feel\n- **'Orbitron' font**: Used for brand elements and section headings\n- **Font weight contrast**: Strong contrast between bold and regular text\n\nGlobal styles establish baseline rules that ensure design consistency across all pages."
+    },
+    {
+      "file": "src/components/ProjectCard.js",
+      "line": 1,
+      "title": "Card Components",
+      "description": "# Card Components Design\n\nThe ProjectCard component exemplifies neo-brutalist card design with:\n\n1. **Bold black borders**: 2px+ thick borders that define card edges\n2. **Hard drop shadows**: 8px offset black shadows (no blur) that create a physical, layered effect\n3. **High contrast interior**: Typically light backgrounds with dark text\n4. **Geometric shapes**: Yellow accent elements that overlap borders\n5. **Minimal rounded corners**: Sharp edges rather than soft rounded corners\n\nThis card pattern is used consistently throughout the site for various content types."
+    },
+    {
+      "file": "src/App.js",
+      "line": 216,
+      "title": "Hero Section Design",
+      "description": "# Hero Section Design\n\nThe hero section demonstrates key neo-brutalist design principles:\n\n1. **Bold, oversized typography**: Large headings with tight tracking\n2. **Background contrast**: Video background with semi-transparent overlay\n3. **Bordered elements**: Thick black borders around text containers\n4. **Hard shadows**: 8px offset shadows without blur\n5. **Box highlighting**: Text with background highlights and borders\n\nThis hero section establishes the design language that carries through the entire site."
+    },
+    {
+      "file": "src/App.js",
+      "line": 106,
+      "title": "Mobile Menu Design",
+      "description": "# Mobile Menu Design\n\nThe mobile menu demonstrates the responsive adaptation of neo-brutalist principles:\n\n1. **Card-based layout**: Contained in a bordered card with hard shadow\n2. **High-contrast elements**: Black and yellow accent elements\n3. **Geometric divisions**: Border elements that create visual separation\n4. **Brand consistency**: Maintains the same design language as desktop\n5. **Animation**: Simple but effective animations for menu appearance\n\nThe mobile menu is designed to be both functional and visually consistent with the site's aesthetic."
+    },
+    {
+      "file": "src/pages/ServicesPage.js",
+      "line": 90,
+      "title": "Navigation Tabs Design",
+      "description": "# Navigation Tabs Design\n\nThe tabbed navigation in the Services page shows how interaction elements follow the neo-brutalist approach:\n\n1. **High-contrast active states**: Yellow background with black text for active tabs\n2. **Hard edges**: No rounded corners or soft transitions\n3. **Bold typography**: Strong, readable type with clear hierarchy\n4. **Geometric shapes**: Square button designs rather than pills or rounded tabs\n\nThese navigation elements maintain the distinct design language while providing clear usability."
+    },
+    {
+      "file": "src/components/ContactForm.js",
+      "line": 1,
+      "title": "Form Elements Design",
+      "description": "# Form Elements Design\n\nThe contact form demonstrates neo-brutalist form design principles:\n\n1. **Bold input fields**: Thick borders and high-contrast backgrounds\n2. **Sharp corners**: Minimal or no border radius\n3. **Button design**: Bold, bordered buttons with dramatic hover effects\n4. **Spacing rhythm**: Consistent, deliberate spacing between elements\n5. **Typography hierarchy**: Clear visual distinction between labels and inputs\n\nForm elements are styled to be visually striking while remaining highly usable."
+    },
+    {
+      "file": "src/index.css",
+      "line": 20,
+      "title": "Animation Design",
+      "description": "# Animation Design\n\nThe animations follow neo-brutalist principles with:\n\n1. **Simple movements**: Direct, purposeful animations without excessive bounce or spring\n2. **Deliberate timing**: Slightly slower animations that feel intentional rather than slick\n3. **Transform-based effects**: Using scale, rotation, and translation for visual impact\n4. **Sequential timing**: Elements that animate in sequence rather than all at once\n\nThese animations add visual interest without contradicting the bold, direct nature of the design."
+    },
+    {
+      "file": "public/resources/project-planner.html",
+      "line": 20,
+      "title": "Resource Document Design",
+      "description": "# Resource Document Design\n\nThe resource documents maintain consistent design language with:\n\n1. **Color scheme consistency**: Same black, white, yellow palette\n2. **Typography matching**: Same font choices and weight patterns\n3. **UI pattern consistency**: Same button styles, card designs, and form elements\n4. **Border treatments**: Consistent border treatments and accents\n5. **Spacing system**: Same spacing patterns as the main site\n\nThis consistency ensures users have a seamless experience across all parts of the site."
+    },
+    {
+      "file": "src/App.js",
+      "line": 272,
+      "title": "Technology Pills Design",
+      "description": "# Technology Pills Design\n\nThe technology section demonstrates how lists of items are styled:\n\n1. **Grid layout**: Consistent grid with deliberate spacing\n2. **Card styling**: Each technology has the same card treatment\n3. **Interaction design**: Hover effects that use translation and shadow removal\n4. **Animation sequencing**: Items animate in sequence based on index\n\nThis creates a visually interesting display that maintains the bold, geometric aesthetic."
+    },
+    {
+      "file": "src/components/Footer.js",
+      "line": 1,
+      "title": "Footer Design",
+      "description": "# Footer Design\n\nThe footer design applies neo-brutalist principles to what's traditionally a more subdued element:\n\n1. **Bold typography**: Strong headings and clear text hierarchy\n2. **Geometric divisions**: Clean divisions between content sections\n3. **High contrast**: Dark background with light text for maximum legibility\n4. **Brand consistency**: Maintains the same design language as the rest of the site\n\nThe footer provides important information while reinforcing the overall design aesthetic."
+    },
+    {
+      "title": "Conclusion",
+      "description": "# Design System Conclusion\n\nThe neo-brutalist design system of the BlvckSmith website creates a distinctive, memorable experience through:\n\n1. **Consistent principles**: Bold typography, high contrast, hard edges, and geometric shapes\n2. **Limited color palette**: Black, white, yellow, and gray used purposefully\n3. **Deliberate motion**: Simple, direct animations that reinforce the aesthetic\n4. **Responsive adaptations**: Consistent experience across devices while acknowledging different contexts\n5. **Cross-document consistency**: Same design language in both React components and static resource pages\n\nThis design approach sets BlvckSmith apart from more conventional corporate sites while maintaining excellent usability and a strong brand identity."
+    }
+  ]
+}
